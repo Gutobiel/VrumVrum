@@ -6,6 +6,6 @@ Augusto Santos
 Cecília Maria
 Pauliany Bentes
 Samuel Sharon
-Thiago Albernaz
+Thiago Lacerda
 Vinícius Alexandre
 Vítor Rodrigues
