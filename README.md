@@ -9,4 +9,3 @@ Alunos de análise e desenvolvimento de sistemas 2022-2024
 - Thiago Lacerda
 - Vinícius Alexandre
 - Vítor Rodrigues
--
