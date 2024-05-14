@@ -1,3 +1,5 @@
+// Barra de Pesquisa Home
+
 document.addEventListener("DOMContentLoaded", function() {
     var input = document.querySelector(".barra__pesquisa");
 
@@ -8,6 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
     input.addEventListener("blur", function() {
         if (input.value === "") {
             input.classList.remove("placeholder-hidden");
-        }
-    });
+        }
+    });
 });

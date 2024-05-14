@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Vrum Vrum</title>
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+    <header class="cabecalho">
+        <div class="cabecalho__conteudo">
+            <!-- Logo e título -->
+            <div class="cabecalho__esquerda">
+            <img src="images/icone-semaforo.svg" alt="ícone de semáforo" class="container__imagem">
+            <a href="/index.html" class="container__titulo">Vrum Vrum</a>
+        </div>
+        <!-- Menu de navegação -->
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__menu__link" href="/templates/login.html">LOGIN</a>
+            <a class="cabecalho__menu__link">SOBRE NÓS</a>
+            <a class="cabecalho__menu__link">SUPORTE</a>
+            <!-- Campo de pesquisa -->
+            <input type="search" class="campo__pesquisa" placeholder="Pesquisar..."> 
+        </nav>
+    </div>
+    </header>
+    <!-- Conteúdo principal: contém título e texto -->
+    <main class="apresentacao conteudo-principal">
+        <section class="apresentacao__conteudo">
+            <h1 class="apresentacao__conteudo__titulo">O controle do trânsito nas suas mãos</h1>
+            <p class="apresentacao__conteudo__texto">Bem vindo ao sistema de controle de semáforos, onde a eficiência e segurança são prioridades. Otimize o fluxo de tráfego e garanta uma circulação mais suave em nossa cidade. Juntos, fazemos a diferença no trânsito!</p>
+
+            <!-- Botão para redirecionar para a página de cadastro -->
+            <div class="apresentacao__link">
+                <a class="apresentacao__link__link" href="/templates/cadastro.html">Começar agora<img class="apresentacao__link__link_imagem" src="/images/botao-acessar.svg"></a>
+            </div>
+        </section>
+        <!-- Imagem página inicial -->
+        <img class="apresentacao__imagem" src="/images/guarda-de-transito.svg" alt="Ícone de Guarda de Trânsito">
+    </main>
+    <!-- Rodapé da página -->
+    <footer class="rodape">
+        <div class="informacoes__contato">
+            <span>Entre em contato:</span>
+            <span><img class="informacoes__contato__icone"src="images/icone-email.svg" alt="Ícone de email"> vrumvrum@gmail.com</span>
+            <span><img class="informacoes__contato__icone" src="images/icone-telefone.svg" alt="Ícone de telefone"> (61) 1234-5678</span>
+        </div>
+        <div class="informacoes__legais">
+            <span>Projeto Integrador - Ceub</span><br>
+            <span>VrumVrum 2024</span>
+        </div>
+    </footer>
+    <!-- Ligação ao arquivo de script -->
+    <script src="script.js"></script>
+    <script src="/scripts/formsCadastro.js"></script>
+</body>
+</html>

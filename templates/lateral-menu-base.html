@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VrumVrum: Página de início</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Cabecalho e lateral menu da página principal -->
+    <header class="container-header">
+        <div id="Header">
+            <div id="FotoENome">
+                <img src="/icones-menu/icone-usuario.svg" alt="FotoHeader">
+                <h1>Olá, {{nome_usuario}}</h1>
+            </div>
+            <div id="divBusca">
+                <!-- Campo de pesquisa -->
+                <input type="search" class="campo__pesquisa" placeholder="Pesquisar...">
+            </div> 
+            <div class="divisor"></div>
+            <div id="FiltroHeader">
+                <a> 
+                    <img id="filtro" src="/icones-menu/icone-filtro.svg" alt="Filtro">
+                </a>
+            </div>
+        </div>
+    
+        <nav id="MenuLateral">
+            <ul>
+                <li><a href=""><img src="/icones-menu/icone-menu-hamburguer.svg" id="Menu-hamburguer"></a></li>
+                <li><a href="/templates/login.html"><img src="/icones-menu/icone-sair.svg" id="Sair"></a></li>
+            </ul>
+        </nav>
+
+        <!-- Cabecalho e lateral menu da página principal -->
+
+    <div class="menu">
+        <fieldset class="menu__posicao">
+        <div class="menu-item-1">
+            <a href="#">
+                <img id="icone" src="/icones-menu/icone-perfil.svg" alt="Perfil">
+                <span>Meu Perfil</span>
+            </a>
+        </div>
+        <div class="menu-item-1">
+            <a href="#">
+                <img id="icone" src="/icones-menu/icone-transito.svg" alt="Trânsito">
+                <span id="transito">Trânsito</span>
+            </a>
+        </div>
+        <div class="menu-item-1">
+            <a href="#">
+                <img id="icone" src="/icones-menu/icone-semaforo.svg" alt="Semáforos">
+                <span>Semáforos</span>
+            </a>
+        </div>
+    </fieldset>
+
+    <fieldset class="menu__posicao">
+        <div class="menu-item-2">
+            <a href="#">
+                <img id="icone" src="/icones-menu/icone-pedestre.svg" alt="Pedestres">
+                <span>Pedestres</span>
+            </a>
+        </div>
+        <div class="menu-item-2">
+            <a href="#">
+                <img id="icone" src="/icones-menu/icone-acidente.svg" alt="Acidentes">
+                <span>Acidentes</span>
+            </a>
+        </div>
+        <div class="menu-item-2">
+            <a href="#">
+                <img id="icone" src="/icones-menu/icone-relatorio.svg" alt="Relatório">
+                <span id="relatorio">Relatório</span>
+            </a>
+        </div>
+    </fieldset>
+    </div>
+    </header>
+    
+</body>
+<script src="/script.js"></script>
+</html>
