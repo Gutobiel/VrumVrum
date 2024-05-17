@@ -1,9 +1,9 @@
 
-<!-- {% extends 'template_base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}Semáforos{% endblock title %}
 
-{% block content %} -->
+{% block content %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -34,7 +34,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- {% for rs in semaforos %} -->
+                        {% for rs in semaforos %}
                         <tr>
                             <td>
                                 <a href="ver/{{ rs.id }}" class="btn btn-outline-primary">+Info</a>
@@ -48,7 +48,7 @@
                                 <a href="edit/{{ rs.id }}" class="btn btn-outline-success">Editar</a> | <a href="delete/{{ rs.id }}" class="btn btn-outline-danger">Deletar</a>
                             </td>
                         </tr>
-                        <!-- {% endfor %} -->
+                        {% endfor %} 
                     </tbody>
                 </table>
             </div>
@@ -69,7 +69,7 @@
                 <h2>CONTROLE</h2>
                 <button class="control-button highlight">TORNAR INTERMITENTE</button>
                 <button class="control-button">PROGRAMAR EVENTOS</button>
-                <button class="control-button">ADICIONAR SEMÁFORO</button>
+                <button class="control-button"><a href="addSemaforo.html">ADICIONAR SEMÁFORO</a></button>
                 <button class="control-button">SINCRONIZAR SEMÁFORO</button>
             </div>
             <div class="report-container">
@@ -86,4 +86,4 @@
 </body>
 </html>
 
-<!-- {% endblock content %} -->
+{% endblock content %}

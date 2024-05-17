@@ -1,7 +1,29 @@
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+from fastapi import FastAPI, Request, Depends, Form, status
+from fastapi.templating import Jinja2Templates
+from sqlalchemy import func
+import uvicorn
+""" import models.models """
+""" from database.database import engine, sessionlocal """
+from sqlalchemy.orm import Session
+from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
 
-@login_required
-def minha_view(request):
-    nome_usuario = request.user.username
-    return render(request, 'meu_template.html', {'nome_usuario': nome_usuario})
+
+""" models.models.Base.metadata.create_all(bind=engine) """
+ 
+templates = Jinja2Templates(directory="templates")
+ 
+app = FastAPI(debug=True)
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+ 
+def get_db():
+    db = sessionlocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+@app.get("/", tags=["Tela Inicial"])
+async def inicio(request: Request):
+    return templates.TemplateResponse("home.html", {"request": request})
