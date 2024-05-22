@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semáforo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container">
+        <div id="Header">
+            <div id="FotoENome">
+                <img src="/assets/normal_u19.png" alt="FotoHeader">
+                <h1>Olá, {{nome_usuario}}</h1>
+            </div>
+            <div id="divBusca">
+                <input type="search" class="campo__pesquisa" placeholder="Pesquisar...">
+            </div> 
+        </div>
+    
+        <nav id="MenuLateral">
+            <ul>
+                <li><a href=""><img src="/assets/normal_u42.svg" id="Home"></a></li>
+                <li><a href=""><img src="/assets/normal_u44.svg" id="Perfil"></a></li>
+                <li><a href=""><img src="/assets/normal_u45.svg" id="Transito"></a></li>
+                <li><a href=""><img src="/assets/normal_u46.svg" id="Semaforos"></a></li>
+                <li><a href=""><img src="/assets/normal_u47.svg" id="Pedestres"></a></li>
+                <li><a href=""><img src="/assets/normal_u48.svg" id="Acidentes"></a></li>
+                <li><a href=""><img src="/assets/normal_u49.svg" id="Relatorio"></a></li>
+                <li><a href=""><img src="/assets/normal_u50.svg" id="Sair"></a></li>
+            </ul>
+        </nav>
+    </header>    
+
+    <div class="content">
+        <div class="main-content">
+            <h2 class="titulo">Eventos</h2>
+            <hr class="linha-preta">
+            <button class="botao-adicionar" onclick="adicionarEvento()">Adicionar Evento</button>
+            <table class="tabela-eventos">
+                <thead>
+                    <tr>
+                        <th>Código Semáforo</th>
+                        <th>Data</th>
+                        <th>Motivo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>2024-05-20</td>
+                        <td>Show na praia</td>
+                        <td>
+                            <button onclick="visualizarEvento(1)">Olhar</button>
+                            <button onclick="editarEvento(1)">Editar</button>
+                            <button onclick="excluirEvento(1)">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>2024-05-21</td>
+                        <td>Show Mane Garrincha</td>
+                        <td>
+                            <button onclick="visualizarEvento(2)">Olhar</button>
+                            <button onclick="editarEvento(2)">Editar</button>
+                            <button onclick="excluirEvento(2)">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
