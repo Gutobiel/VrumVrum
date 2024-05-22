@@ -1,0 +1,289 @@
+:root {
+    --cor-de-fundo-primaria: linear-gradient(to bottom right, #000000, #1a386d);
+    --cor-de-fundo-secundaria: #9DB1D1;
+    --cor-de-fundo-terciaria: #DBDBE4;
+    --cor-fonte-primaria: aliceblue;
+    --cor-fonte-secundaria: #1a386d;
+    --fonte-primaria: "Poppins", sans-serif;
+    --fonte-secundaria: "Bebas Neue", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-primaria);
+    font-size: large;
+    background-color: rgba(219, 219, 228, 1);
+}
+
+/* Estilo para o corpo da página */
+#container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo para a imagem no cabeçalho */
+#Header img {
+    height: 50px; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o título no cabeçalho */
+#Header h1 {
+    margin-left: 20px;
+}
+
+/* Estilo para o menu lateral */
+#MenuLateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px; /* Largura do menu lateral */
+    background: linear-gradient(to bottom right, #000000, #1a386d);
+}
+
+/* Estilo para a lista do menu */
+#MenuLateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para os itens do menu */
+#MenuLateral li {
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilo para os links do menu */
+#MenuLateral a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo para as imagens nos links do menu */
+#MenuLateral img {
+    width: 40px; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o botão Home */
+#Home {
+    margin-top: 10px;
+    margin-bottom: 50px; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o botão Sair */
+#Sair {
+    position: absolute;
+    bottom: 20px; /* Ajuste conforme necessário */
+    left: 50%; /* Centralizar */
+    transform: translateX(-50%);
+}
+
+/* Estilo para os outros itens do menu */
+#Perfil, 
+#Transito,
+#Semaforos,
+#Pedestres,
+#Acidentes,
+#Relatorio {
+    margin-top: 20px; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o cabeçalho */
+#Header {
+    position: fixed;
+    top: 0;
+    left: 82px;
+    height: 60px; /* Altura do cabeçalho */
+    width: calc(100% - 120px); /* A largura é ajustada para ocupar o espaço restante */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: var(--cor-de-fundo-primaria); /* Cor de fundo primária */
+    color: var(--cor-fonte-primaria); /* Cor da fonte primária */
+    font-family: var(--fonte-primaria); /* Fonte primária */
+    border-bottom: 3px solid #1a386d; /* Cor da borda inferior */
+    z-index: 1; /* Para garantir que o cabeçalho fique acima da barra lateral */
+}
+
+/* Estilo para o contêiner de foto e nome */
+#FotoENome {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para a imagem no cabeçalho */
+#FotoENome img {
+    height: 50px; /* Ajuste conforme necessário */
+    margin-right: 10px; /* Espaçamento entre a foto e o texto */
+}
+
+/* Estilo para o título no cabeçalho (nome do usuário) */
+#FotoENome h1 {
+    margin: 0; /* Remover margens padrão */
+    color: white; /* Cor branca */
+}
+
+/* BARRA DE PESQUISA */
+#divBusca {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Move para o final */
+    border: 1px solid white; /* Adiciona uma borda */
+    border-radius: 30px; /* Adiciona um raio de borda para arredondar os cantos */
+    padding: 1px;
+}
+
+#campo__pesquisa {
+    background-color: transparent;
+    border: 1px solid var(--cor-fonte-primaria);
+    color: var(--cor-fonte-primaria);
+    border-radius: 30px;
+    padding: 5px;
+    width: 250px;
+    min-width: 0;
+}
+
+#campo__pesquisa::placeholder {
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: var(--cor-fonte-primaria);
+    background: url(/assets/Vector.svg) no-repeat;
+    background-position: 1.5em;
+}
+
+#campo__pesquisa:focus {
+    border-color: var(--cor-fonte-primaria); /* Cor da borda ao focar */
+    border-width: 1px; /* Largura da borda ao focar */
+}
+
+/* Ícone do filtro */
+#FiltroHeader {
+    width: 15px; /* Diminui o tamanho */
+}
+
+/* Linha divisória */
+#Divisor {
+    height: 30px; /* Altura da linha igual à altura da barra de pesquisa */
+    width: 1px;
+    background-color: #ccc; /* Cor da linha */
+}
+
+/* Estilo para o conteúdo do perfil */
+#profile-content {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    width: 80%; /* Ajuste a largura conforme necessário */
+    max-width: 800px; /* Defina uma largura máxima */
+}
+
+/* Estilo para o logo/foto do usuário e para atualizar a foto */
+#update-logo button {
+    align-items: center;
+}
+
+/* Estilo para o container das informações do perfil */
+#profile-informations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-de-fundo-secundaria);
+    border-radius: 50px;
+    width: 70%;
+    height: 60%;
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+/* Estilo para o logo/foto do usuário e para atualizar a foto */
+
+
+
+#image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    max-width: 500px;
+}
+
+#update-logo button {
+    margin-top: 10px; 
+    width: 500px;
+    height: 40px;
+    background-color: #fff;
+    color: #1a386d;
+    font-size: larger;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+#update-logo button:hover {
+    background-color: rgba(0, 138, 198, 1);
+    font-weight: 700;
+}
+
+/* Estilo para o formulário */
+#cadastro-perfil fieldset {
+    border: none;
+    display: flex;
+    padding: 20px;
+}
+
+#data-nascimento input {
+    display: flex;
+    width: 213px; 
+}
+
+#nome input {
+    display: flex;
+    width: 600px; 
+}
+
+#grupo label {
+    color: #fff;
+}
+
+input {
+    display: flex;
+    margin: 10px 10px;
+    width: 432px;
+    height: 44px;
+    border: none;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+#button-container {
+    text-align: center;
+}
+
+#button-container div {
+    display: inline-block;
+}
+
+#button-container button {
+    width: 226px;
+    height: 36px;
+    background-color: rgba(0, 138, 198, 1);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: larger;
+}
+
+#button-container button:hover {
+    background-color: #aeaeb5;
+}
