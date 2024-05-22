@@ -1,12 +1,33 @@
 /* Estilo para o corpo da página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(103, 152, 180)
+}
+
+/* Estilo para o contêiner */
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+
+/* Estilo para o cabeçalho */
+#Header {
+    position: fixed;
+    top: 0;
+    left: 82px;
+    height: 60px; /* Altura do cabeçalho */
+    width: calc(100% - 120px); /* A largura é ajustada para ocupar o espaço restante */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: linear-gradient(to bottom right, #000000, #1a386d); /* Cor de fundo primária */
+    color: aliceblue; /* Cor da fonte primária */
+    font-family: "Poppins", sans-serif; /* Fonte primária */
+    border-bottom: 3px solid #1a386d; /* Cor da borda inferior */
+    z-index: 1; /* Para garantir que o cabeçalho fique acima da barra lateral */
 }
 
 /* Estilo para a imagem no cabeçalho */
@@ -17,6 +38,76 @@ body {
 /* Estilo para o título no cabeçalho */
 #Header h1 {
     margin-left: 20px;
+}
+
+/* Estilo para o contêiner de foto e nome */
+#FotoENome {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para a imagem no contêiner de foto e nome */
+#FotoENome img {
+    height: 50px; /* Ajuste conforme necessário */
+    margin-right: 10px; /* Espaçamento entre a foto e o texto */
+}
+
+/* Estilo para o título no contêiner de foto e nome */
+#FotoENome h1 {
+    margin: 0; /* Remover margens padrão */
+    color: white; /* Cor branca */
+}
+
+/* Estilo para a barra de pesquisa */
+#divBusca {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Move para o final */
+    border: 1px solid white; /* Adiciona uma borda */
+    border-radius: 30px; /* Adiciona um raio de borda para arredondar os cantos */
+    padding: 1px;
+}
+
+.campo__pesquisa {
+    background-color: transparent;
+    border: 1px solid var(--cor-fonte-primaria);
+    color: var(--cor-fonte-primaria);
+    border-radius: 30px;
+    padding: 5px;
+    width: 250px;
+    min-width: 0;
+}
+
+.campo__pesquisa::placeholder {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: var(--cor-fonte-primaria);
+    background: url(/assets/Vector.svg) no-repeat;
+    background-position: 1.5em;
+}
+
+.placeholder-hidden::placeholder {
+    color: transparent;
+    background: none;
+}
+
+.campo__pesquisa:focus {
+    border-color: var(--cor-fonte-primaria); /* Cor da borda ao focar */
+    border-width: 1px; /* Largura da borda ao focar */
+}
+
+/* Ícone do filtro */
+#FiltroHeader {
+    width: 15px; /* Diminui o tamanho */
+}
+
+/* Linha divisória */
+#Divisor {
+    height: 30px; /* Altura da linha igual à altura da barra de pesquisa */
+    width: 1px;
+    background-color: #ccc; /* Cor da linha */
 }
 
 /* Estilo para o menu lateral */
@@ -69,7 +160,7 @@ body {
 }
 
 /* Estilo para os outros itens do menu */
-#Perfil, 
+#Perfil,
 #Transito,
 #Semaforos,
 #Pedestres,
@@ -77,92 +168,111 @@ body {
 #Relatorio {
     margin-top: 20px; /* Ajuste conforme necessário */
 }
-/* Estilo para o cabeçalho */
-/* Estilo para o cabeçalho */
-#Header {
-    position: fixed;
-    top: 0;
-    left: 82px;
-    height: 60px; /* Altura do cabeçalho */
-    width: calc(100% - 120px); /* A largura é ajustada para ocupar o espaço restante */
+
+/* Estilo para o conteúdo principal */
+.content {
+    margin-left: 100px; /* Ajuste conforme necessário */
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    background: linear-gradient(to bottom right, #000000, #1a386d); /* Cor de fundo primária */
-    color: aliceblue; /* Cor da fonte primária */
-    font-family: "Poppins", sans-serif; /* Fonte primária */
-    border-bottom: 3px solid #1a386d; /* Cor da borda inferior */
-    z-index: 1; /* Para garantir que o cabeçalho fique acima da barra lateral */
+    margin-top: 80px; /* Para deixar espaço para o cabeçalho fixo */
 }
 
-/* Estilo para o contêiner de foto e nome */
-#FotoENome {
+/* Estilo para o conteúdo principal à esquerda */
+.main-content {
+    flex: 2;
+}
+
+/* Estilo para o título */
+.titulo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo para a linha preta */
+.linha-preta {
+    border: 0;
+    height: 2px;
+    background: black;
+    margin: 10px 20px;
+}
+
+/* Estilo para o texto */
+.texto {
+    margin: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estilo para a imagem */
+.imagem-exemplo {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* Estilo para os botões abaixo da imagem principal */
+.botoes-abaixo-imagem {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-/* Estilo para a imagem no cabeçalho */
-#FotoENome img {
-    height: 50px; /* Ajuste conforme necessário */
-    margin-right: 10px; /* Espaçamento entre a foto e o texto */
+.botao-principal {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Estilo para o título no cabeçalho (nome do usuário) */
-#FotoENome h1 {
-    margin: 0; /* Remover margens padrão */
-    color: white; /* Cor branca */
-}
-
-/* BARRA DE PESQUISA */
-#divBusca {
+/* Estilo para o conteúdo lateral à direita */
+.side-content {
+    flex: 1;
     display: flex;
-    align-items: center;
-    margin-left: auto; /* Move para o final */
-    border: 1px solid white; /* Adiciona uma borda */
-    border-radius: 30px; /* Adiciona um raio de borda para arredondar os cantos */
-    padding: 1px;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os blocos */
+    margin-left: 20px;
 }
 
-
-
-.campo__pesquisa {
-    background-color: transparent;
-    border: 1px solid var(--cor-fonte-primaria);
-    color: var(--cor-fonte-primaria);
-    border-radius: 30px;
-    padding: 5px;
-    width: 250px;
-    min-width: 0;
+/* Estilo para os blocos na lateral */
+.bloco-controle, .bloco-fluxo {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
 }
 
-
-.campo__pesquisa::placeholder {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    text-align: center;
-    color: var(--cor-fonte-primaria);
-    background: url(/assets/Vector.svg) no-repeat;
-    background-position: 1.5em;
-}
-.placeholder-hidden::placeholder {
-    color: transparent;
-    background: none;
- }
- 
- .campo__pesquisa:focus {
-    border-color: var(--cor-fonte-primaria); /* Cor da borda ao focar */
-    border-width: 1px; /* Largura da borda ao focar */
-}
-/* Ícone do filtro */
-#FiltroHeader {
-    width: 15px; /* Diminui o tamanho */
+/* Estilo para os títulos dos blocos */
+.bloco-controle h3, .bloco-fluxo h3 {
+    margin-top: 0;
 }
 
-/* Linha divisória */
-#Divisor {
-    height: 30px; /* Altura da linha igual à altura da barra de pesquisa */
-    width: 1px;
-    background-color: #ccc; /* Cor da linha */
+/* Estilo para os botões de controle */
+.botao-controle, .botao-fluxo {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: #1a386d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
+/* Estilo para a imagem do gráfico */
+.grafico {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* .content{
+    background-color: #ccc;
+} */
