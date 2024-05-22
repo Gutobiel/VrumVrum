@@ -43,7 +43,7 @@ body {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 80px; /* Largura do menu lateral */
+    width: 100px; /* Largura do menu lateral */
     background: linear-gradient(to bottom right, #000000, #1a386d);
 }
 
@@ -100,8 +100,8 @@ body {
 #Header {
     position: fixed;
     top: 0;
-    left: 82px;
-    height: 60px; /* Altura do cabeçalho */
+    left: 100px;
+    height: 100px; /* Altura do cabeçalho */
     width: calc(100% - 120px); /* A largura é ajustada para ocupar o espaço restante */
     display: flex;
     justify-content: space-between;
