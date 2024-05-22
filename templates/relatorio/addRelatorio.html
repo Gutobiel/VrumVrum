@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Eventos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container">
+        <div id="Header">
+            <div id="FotoENome">
+                <img src="/assets/normal_u19.png" alt="FotoHeader">
+                <h1>Olá, {{nome_usuario}}</h1>
+            </div>
+            <div id="divBusca">
+                <input type="search" class="campo__pesquisa" placeholder="Pesquisar...">
+            </div> 
+        </div>
+    
+        <nav id="MenuLateral">
+            <ul>
+                <li><a href=""><img src="/assets/normal_u42.svg" id="Home"></a></li>
+                <li><a href=""><img src="/assets/normal_u44.svg" id="Perfil"></a></li>
+                <li><a href=""><img src="/assets/normal_u45.svg" id="Transito"></a></li>
+                <li><a href=""><img src="/assets/normal_u46.svg" id="Semaforos"></a></li>
+                <li><a href=""><img src="/assets/normal_u47.svg" id="Pedestres"></a></li>
+                <li><a href=""><img src="/assets/normal_u48.svg" id="Acidentes"></a></li>
+                <li><a href=""><img src="/assets/normal_u49.svg" id="Relatorio"></a></li>
+                <li><a href=""><img src="/assets/normal_u50.svg" id="Sair"></a></li>
+            </ul>
+        </nav>
+    </header>    
+
+    <div class="content">
+        <div class="main-content">
+            <h2 class="titulo">Cadastro de Eventos</h2>
+            <hr class="linha-preta">
+
+            <form class="form-cadastro-eventos" >
+                <div class="form-group">
+                    <label for="codigo-semaforo">Código Semáforo:</label>
+                    <input type="text" id="codigo-semaforo" name="codigo-semaforo" required>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="motivo">Motivo:</label>
+                    <input type="text" id="motivo" name="motivo" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="botao-principal">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+
+       
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
