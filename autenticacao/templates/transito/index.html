@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Controle do transito</title>
+</head>
+<body>
+    <div id="Transito-Content" class="container">
+        <div class="left-section">
+            <h1>MAPA DE TRÂNSITO</h1>
+            <div id="line-transito"></div>
+            <div id="Mapa-transito">
+                <a href="https://www.bing.com/maps/traffic?setlang=pt-br&FORM=ntptra&cvid=227799ae76844c02a4726b10e0a2ee9f&ocid=msedgdhp&cp=-15.79167%7E-47.886315&lvl=15.3&incidentid=40839274664017000&incidenttype=5&incidentloc=-15.796572%7E-47.877389&detectedloc=-15.761736869812012%7E-47.891693115234375&detectedlocacc=362.43304443359375&pc=U531&ei=45">
+                    <img src="/autenticacao/assets/MAPA-TRANSITO.png" alt="Mapa de Trânsito">
+                </a>
+            </div>
+            <p>INSIRA O LOCAL</p>
+            <form action='/' method='post'>
+                <input type='text' name='pesquisa' placeholder='Digite o id do semaforo'>
+                <button type='submit'>Consultar</button>
+            </form>
+            <div class="buttons">
+                <button class="btn-aovivo"><a href="/semaforo/aovivo/index.html">AO VIVO</a></button>
+                <button class="btn-gravar">GRAVAR</button>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="control-container">
+                <h2>CONTROLE</h2>
+                <button class="control-button highlight">TORNAR INTERMITENTE</button>
+                <button class="control-button">PROGRAMAR EVENTOS</button>
+            </div>
+            <div class="report-container">
+                <div class="chart">
+                    <div style="height: 40%;"></div>
+                    <div style="height: 60%;"></div>
+                    <div style="height: 50%;"></div>
+                    <div style="height: 70%;"></div>
+                </div>
+                <button class="report-button">GERAR RELATÓRIO</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
