@@ -1,0 +1,366 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1600px; /* Aumenta a largura máxima para dar mais espaço */
+    gap: 20px;
+}
+
+.left-section, .right-section {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.left-section {
+    flex: 4; /* Aumenta a largura da seção à esquerda */
+}
+
+.right-section {
+    flex: 2; /* Deixa a seção à direita mais quadrada */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-section h1 {
+    font-size: 24px;
+    color: #1f2c4c;
+    margin-bottom: 10px;
+}
+
+.left-section p {
+    font-size: 14px;
+    color: #3d4f6e;
+    margin-bottom: 20px;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.input-section input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.input-section button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.input-section .gravar {
+    color: red;
+}
+
+.control-container, .report-container {
+    background-color: #a8bdd7;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.control-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.control-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.control-button.highlight {
+    background-color: #ffd500;
+}
+
+.chart {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.chart div {
+    width: 20%;
+    background-color: white;
+}
+
+.report-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#Tabela-semaforo {
+    margin-top: 20px;
+}
+
+#Tabela-semaforo table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#Tabela-semaforo thead {
+    background-color: transparent;
+}
+
+#Tabela-semaforo th {
+    background-color: transparent;
+    border: 1px solid #ccc; /* Manter as bordas visíveis */
+    color: #1f2c4c; /* Cor do texto para legibilidade */
+}
+
+#Tabela-semaforo th, #Tabela-semaforo td {
+    padding: 8px;
+    text-align: left;
+}
+
+#Tabela-semaforo tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#Recursos-semaforo {
+    margin-top: 20px;
+}
+
+#Recursos-semaforo h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#Recursos-semaforo form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#Recursos-semaforo input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#Recursos-semaforo button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+
+#Recursos-semaforo button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.controles {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.controles h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.controles .button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.controles .highlight {
+    background-color: #ffeb84;
+}
+
+.relatorio {
+    background-color: #a8bdd7;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.relatorio .chart {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.relatorio .chart div {
+    width: 20%;
+    background-color: white;
+}
+
+.relatorio .report-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#Tabela-semaforo table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#Tabela-semaforo th, #Tabela-semaforo td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+#Tabela-semaforo th {
+    background-color: #f2f2f2;
+}
+
+#Tabela-semaforo tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#Recursos-semaforo {
+    margin-top: 20px;
+}
+
+#Recursos-semaforo h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#Recursos-semaforo form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#Recursos-semaforo input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#Recursos-semaforo button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+
+#Recursos-semaforo button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.controles {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.controles h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.controles .button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.controles .button.highlight {
+    background-color: #ffeb84;
+}
+
+.relatorio {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.relatorio .chart {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.relatorio .chart div {
+    width: 20%;
+    background-color: white;
+}
+
+.relatorio .report-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+}
