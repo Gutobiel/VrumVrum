@@ -1,0 +1,76 @@
+{% extends "menu-principal.html" %}
+{% load static %}
+
+<!-- {% load crispy_forms_tags %} -->
+
+{% block title %}
+Vrum Vrum | Menu Principal
+{% endblock %}
+
+{%block 'head'%}
+{% block additional_css %}
+<link rel="stylesheet" href="{% static '/css/menu-principal.css' %}">
+<link rel="stylesheet" href="{% static '/css/styles.css' %}">
+{% endblock %}
+{%endblock%}
+
+{% block content %}
+
+<div class="main">
+
+<main class="menu-content pt-5">
+    <div class="menu">
+        <fieldset class="menu__posicao">
+            <div class="menu-item-1">
+                <a href="#">
+                    <img id="icone" src="{% static 'assets/mp-icone-perfil.svg' %}" alt="Perfil">
+                    <span>Meu Perfil</span>
+                </a>
+            </div>
+            <div class="menu-item-1">
+                <a href="{% url 'group_list'}">
+                    <img id="icone" src="{% static 'assets/mp-icone-admin.svg' %}" alt="Administração">
+                    <span id="admin">Administração</span>
+                </a>
+            </div>
+            <div class="menu-item-1">
+                <a href="#">
+                    <img id="icone" src="{% static 'assets/mp-icone-transito.svg' %}" alt="Trânsito">
+                    <span id="transito">Trânsito</span>
+                </a>
+            </div>
+            <div class="menu-item-1">
+                <a href="#">
+                    <img id="icone" src="{% static 'assets/mp-icone-semaforo.svg' %}" alt="Semáforos">
+                    <span>Semáforos</span>
+                </a>
+            </div>
+        </fieldset>
+
+        <fieldset class="menu__posicao">
+            <div class="menu-item-2">
+                <a href="#">
+                    <img id="icone" src="{% static 'assets/mp-icone-pedestre.svg' %}" alt="Pedestres">
+                    <span>Pedestres</span>
+                </a>
+            </div>
+            <div class="menu-item-2">
+                <a href="#">
+                    <img id="icone" src="{% static 'assets/mp-icone-acidente.svg' %}" alt="Acidentes">
+                    <span>Acidentes</span>
+                </a>
+            </div>
+            <div class="menu-item-2">
+                <a href="#">
+                    <img id="icone" src="{% static 'assets/mp-icone-relatorio.svg' %}" alt="Relatório">
+                    <span id="relatorio">Relatório</span>
+                </a>
+            </div>
+        </fieldset>
+    </div>
+    </main> 
+
+
+    </div>
+
+{% endblock %}
