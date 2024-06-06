@@ -1,0 +1,178 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1600px;
+    gap: 20px;
+}
+
+.left-section, .right-section {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.left-section {
+    flex: 4;
+}
+
+.right-section {
+    flex: 1.5; /* Ajuste a largura da seção direita */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-section h1 {
+    font-size: 24px;
+    color: #1f2c4c;
+    margin-bottom: 10px;
+}
+
+.left-section p {
+    font-size: 14px;
+    color: #3d4f6e;
+    margin-bottom: 10px; /* Reduzi a margem inferior */
+}
+
+#Mapa-transito {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#Mapa-transito img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px; /* Adiciona borda arredondada à imagem */
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px; /* Reduzi a margem inferior */
+    align-items: center;
+    justify-content: center; /* Centraliza o formulário */
+}
+
+form input[type='text'] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+form button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.left-section .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.left-section .buttons button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.left-section .buttons button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.control-container {
+    background-color: #a8bdd7;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.control-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.control-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.control-button.highlight {
+    background-color: #ffd500;
+}
+
+.report-container {
+    background-color: #a8bdd7;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.chart {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.chart div {
+    width: 20%;
+    background-color: white;
+}
+
+.report-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.btn-gravar{
+    background-color: red;
+    color: blue;
+}
