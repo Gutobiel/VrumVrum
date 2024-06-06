@@ -1,0 +1,211 @@
+:root {
+    --cor-de-fundo-primaria: linear-gradient(to bottom right, #000000, #1a386d);
+    --cor-de-fundo-secundaria: #9DB1D1;
+    --cor-de-fundo-terciaria: #DBDBE4;
+    --cor-fonte-primaria: aliceblue;
+    --cor-fonte-secundaria: #1a386d;
+    --fonte-primaria: "Poppins", sans-serif;
+    --fonte-secundaria: "Bebas Neue", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-primaria);
+    font-size: large;
+    background-color: rgba(219, 219, 228, 1);
+}
+
+/* Estilo para o corpo da página */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo para a imagem no cabeçalho */
+#Header img {
+    height: 50px;
+}
+
+/* Estilo para o título no cabeçalho */
+#Header h1 {
+    margin-left: 20px;
+}
+
+/* Estilo para o menu lateral */
+#MenuLateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    background: linear-gradient(to bottom right, #000000, #1a386d);
+}
+
+/* Estilo para a lista do menu */
+#MenuLateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para os itens do menu */
+#MenuLateral li {
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilo para os links do menu */
+#MenuLateral a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo para as imagens nos links do menu */
+#MenuLateral img {
+    width: 40px;
+}
+
+/* Estilo para o botão Home */
+#Home {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+/* Estilo para o botão Sair */
+#Sair {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    
+    /* Estilo para os outros itens do menu */
+    #Perfil,
+    #Transito,
+    #Semaforos,
+    #Pedestres,
+    #Acidentes,
+    #Relatorio {
+    margin-top: 20px;
+    }
+    
+    /* Estilo para o cabeçalho */
+    #Header {
+    position: fixed;
+    top: 0;
+    left: 82px;
+    height: 60px;
+    width: calc(100% - 120px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: linear-gradient(to bottom right, #000000, #1a386d);
+    color: aliceblue;
+    font-family: "Poppins", sans-serif;
+    border-bottom: 3px solid #1a386d;
+    z-index: 1;
+    }
+    
+    /* Estilo para o contêiner de foto e nome */
+    #FotoENome {
+    display: flex;
+    align-items: center;
+    }
+    
+    /* Estilo para a imagem no cabeçalho */
+    #FotoENome img {
+    height: 50px;
+    margin-right: 10px;
+    }
+    
+    /* Estilo para o título no cabeçalho (nome do usuário) */
+    #FotoENome h1 {
+    margin: 0;
+    color: white;
+    }
+    
+    /* BARRA DE PESQUISA */
+    #divBusca {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 1px;
+    }
+    
+
+    #conteudo-relatorio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px; 
+    background-color: var(--cor-de-fundo-secundaria);
+    border-radius: 10px;
+    }
+    
+    /* Estilo para o relatório compartilhado */
+    #relatorio-compartilhado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    }
+    
+    #relatorio-compartilhado img {
+    max-width: 350px;
+    margin: 0 auto;
+    }
+    
+    #relatorio-compartilhado button {
+    width: 450px;
+    height: 40px;
+    background-color: rgba(247, 245, 245, 1);
+    border: none;
+    border-radius: 20px;
+    font-family: "Poppins-Medium", "Poppins Medium", "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: #0F213F;
+    margin-top: 20px;
+    cursor: pointer;
+    }
+    
+    #relatorio-compartilhado button:hover {
+    background-color: rgba(0, 138, 198, 1);
+    }
+    
+    /* Estilo para os botões de formatos */
+    #btns-formatos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    }
+    
+    #btns-formatos button {
+    width: 400px;
+    height: 40px;
+    background-color: rgba(247, 245, 245, 1);
+    border: none;
+    border-radius: 20px;
+    font-family: "Poppins-Medium", "Poppins Medium", "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #0F213F;
+    margin-top: 20px;
+    cursor: pointer;
+    }
+    
+    #btns-formatos button:hover {
+    background-color: rgba(0, 138, 198, 1);
+    }

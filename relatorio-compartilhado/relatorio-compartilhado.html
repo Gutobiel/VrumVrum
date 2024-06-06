@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="relatorio-compartilhado.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="profile">
+        <header class="container">
+            <div id="Header">
+                <div id="FotoENome">
+                    <img src="assets/u19.png" alt="FotoHeader">
+                    <h1>Olá, {{nome_usuario}}</h1>
+                </div>
+                <div id="divBusca">
+                    <input type="search" class="campo__pesquisa" placeholder="Pesquisar...">
+                </div>
+            </div>
+            <nav id="MenuLateral">
+                <ul>
+                    <li><a href=""><img src="/pagina-perfil/assets/icone-home.png" id="Home"></a></li>
+                    <li><a href=""><img src="/pagina-perfil/assets/icone-perfil.png" id="Perfil"></a></li>
+                    <li><a href=""><img src="/pagina-perfil/assets/sidebar-transito-icone.svg" id="Transito"></a></li>
+                    <li><a href=""><img src="/pagina-perfil/assets/icone-semaforo.svg" id="Semaforos"></a></li>
+                    <li><a href=""><img src="/pagina-perfil/assets/sidebar-pedestre-icone.svg" id="Pedestres"></a></li>
+                    <li><a href=""><img src="/pagina-perfil/assets/sidebar-acidente-icone.svg" id="Acidentes"></a></li>
+                    <li><a href=""><img src="/pagina-perfil/assets/sidebar-relatorio-icone.svg" id="Relatorio"></a></li>
+                    <li><a href=""><img src="/pagina-perfil/assets/sidebar-admin-icone.svg" id="Sair"></a></li>
+                    </ul>
+            </nav>
+        </header>
+        <div class="container-relatorio">
+            <div id="conteudo-relatorio">
+                <div id="relatorio-compartilhado">
+                    <img src="assets/u21.png" alt="relatorio-compartilhado">
+                    <button type="button">COMPARTILHAR</button>
+                </div>
+                <div id="btns-formatos">
+                    <button type="button">PDF</button>
+                    <button type="button">PNG</button>
+                    <button type="button">JPG</button>
+                    <button type="button">WORD</button>
+                </div>
+            </div>
+        </div>
+        
+</body>
+</html>
