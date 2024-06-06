@@ -1,17 +1,3 @@
-# from . import views
-# from django.urls import path
-# from .views import register
-
-# from .views import cadastro, editar_usuario, excluir_usuario, lista_usuarios
-
-# urlpatterns = [
-#     path('register/', register, name='register'),
-#     path('update-user/<int:pk>/', views.update_user, name='update_user'),
-#     path('delete-user/<int:pk>/', views.delete_user, name='delete_user'),
-#     path('user-list/', views.user_list, name='user_list'),
-
-# ]
-
 from django.urls import path
 from .views import GroupCreateView, GroupDeleteView, GroupListView, GroupUpdateView, RegisterView, UpdateUserView, DeleteUserView, UserListView
 
