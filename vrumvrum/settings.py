@@ -148,7 +148,7 @@ EMAIL_HOST_PASSWORD = 'aaxs nabd hvrg eciz'  # Sua senha do Gmail
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Configurações de Autenticação
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'menu-principal'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'  # Corrected setting name
 

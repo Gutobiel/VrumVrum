@@ -2,7 +2,9 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import Group, Permission
+from django.core.exceptions import ValidationError
 from .models import CustomUser, Cargo, Orgao, generate_random_password
+
 
 class CustomUserCreationForm(UserCreationForm):
     cargo = forms.ModelChoiceField(queryset=Cargo.objects.all(), widget=forms.Select(attrs={'class': 'form-control', 'placeholder': 'Selecione um cargo'}))
@@ -37,6 +39,12 @@ class CustomUserCreationForm(UserCreationForm):
             self.fields['password2'].required = False
             self.fields['password1'].widget.attrs['placeholder'] = 'Deixe em branco para gerar uma senha automaticamente'
             self.fields['password2'].widget.attrs['placeholder'] = 'Deixe em branco para gerar uma senha automaticamente'
+
+    def clean_email(self):
+            email = self.cleaned_data.get('email')
+            if CustomUser.objects.filter(email=email).exists():
+                raise forms.ValidationError(f"O email {email} já está em uso.")
+            return email
 
     def save(self, commit=True):
         user = super().save(commit=False)
@@ -85,7 +93,6 @@ class CustomUserChangeForm(UserChangeForm):
             user.save()
             self.save_m2m()
         return user
-    
 
 
 class GroupForm(forms.ModelForm):

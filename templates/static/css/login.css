@@ -2,6 +2,11 @@ body {
    margin: 0px;
 }
 
+.titulo-permissao {
+   font-size: 2rem;
+   font-family: var(--fonte-primaria);
+}
+
 .container-login {
     display: flex;
     height: 100%;
@@ -134,4 +139,21 @@ input[type="password"] {
    border-radius: 4px; /* Arredondar as bordas do campo */
    box-sizing: border-box; /* Garantir que o padding não aumente a largura do campo */
    color: white;
+}
+
+    
+.senha-container {
+   position: relative;
+   right: 4rem;
+   bottom: 1rem;
+}
+.esqueceu-senha {
+   display: block;
+   text-align: right;
+   margin-top: 5px;
+   text-decoration: none;
+   color: #008080; /* Cor teal */
+}
+.esqueceu-senha:hover {
+   text-decoration: underline;
 }

@@ -1,23 +1,25 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.views.generic import View
 from django.contrib.auth import login
 from .forms import CustomUserChangeForm, CustomUserCreationForm
 from .forms import GroupForm
 from django.contrib.auth.models import Group
+from braces.views import GroupRequiredMixin
 from .models import CustomUser, generate_random_password, generate_random_string
 
 
-class RegisterView(LoginRequiredMixin, View):
-    login_url = '/login/'  # URL de login, se o usuário não estiver autenticado
-    redirect_field_name = 'redirect_to'  # Nome do campo de redirecionamento
+class RegisterView(GroupRequiredMixin, LoginRequiredMixin, View):
+    login_url = reverse_lazy('login')
+    group_required = u"Admnistrador"
+    template_name = 'cadastros/index.html'
 
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
         form = CustomUserCreationForm()
-        return render(request, 'cadastros/index.html', {'form': form})
+        return render(request, self.template_name, {'form': form})
 
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
@@ -27,40 +29,63 @@ class RegisterView(LoginRequiredMixin, View):
             user.save()
             login(request, user)
             return redirect('home')
-        return render(request, 'cadastros/index.html', {'form': form})
+        return render(request, self.template_name, {'form': form})
+    
+    def get(self, request, *args, **kwargs):
+        form = CustomUserCreationForm()
+        breadcrumb_items = [
+            {'name': 'Administração', 'link': reverse('administracao')},
+            {'name': 'Lista de Funcionários', 'link': reverse('user_list')},
+            {'name': 'Cadastrar Funcionário', 'link': None},
+        ]
+        return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
 
 
 ########### ATUALIZAR OS DADOS DE UM USUARIO ###############
 
-class UpdateUserView(LoginRequiredMixin, View):
+class UpdateUserView(GroupRequiredMixin, LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
+    group_required = u"Admnistrador"
     template_name = 'lista/editar-usuario.html'
 
-    def get(self, request, pk):
-        user = get_object_or_404(CustomUser, pk=pk)
+    def get(self, request, *args, **kwargs):
+        user = get_object_or_404(CustomUser, pk=self.kwargs['pk'])
         form = CustomUserChangeForm(instance=user)
         return render(request, self.template_name, {'form': form})
 
-    def post(self, request, pk):
-        user = get_object_or_404(CustomUser, pk=pk)
+    def post(self, request, *args, **kwargs):
+        user = get_object_or_404(CustomUser, pk=self.kwargs['pk'])
         form = CustomUserChangeForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
             return redirect('user_list')
         return render(request, self.template_name, {'form': form})
     
+    def get(self, request, *args, **kwargs):
+        user = get_object_or_404(CustomUser, pk=self.kwargs['pk'])
+        form = CustomUserChangeForm(instance=user)
+        
+        breadcrumb_items = [
+            {'name': 'Administração', 'link': reverse('administracao')},
+            {'name': 'Lista de Funcionários', 'link': reverse('user_list')},
+            {'name': 'Editar Dados de Cadastro', 'link': None},
+        ]
+        
+        return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
+    
 ############ EXCLUIR UM USUARIO ##############
 
-class DeleteUserView(LoginRequiredMixin, View):
+class DeleteUserView(GroupRequiredMixin, LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
+    group_required = u"Admnistrador"
     template_name = 'lista/excluir-usuario.html'
 
-    def get(self, request, pk):
-        user = get_object_or_404(CustomUser, pk=pk)
+    def get(self, request, *args, **kwargs):
+        user = get_object_or_404(CustomUser, pk=self.kwargs['pk'])
         return render(request, self.template_name, {'user': user})
 
-    def post(self, request, pk):
-        user = get_object_or_404(CustomUser, pk=pk)
+    def post(self, request, *args, **kwargs):
+        user = get_object_or_404(CustomUser, pk=self.kwargs['pk'])
         user.delete()
         return redirect('user_list')
     
@@ -71,67 +96,90 @@ class UserListView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
     template_name = 'lista/usuarios.html'
 
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
         users = CustomUser.objects.all()
         return render(request, self.template_name, {'users': users})
-
-
-from django.contrib.auth.models import Group
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views import View
-from .forms import GroupForm
-
-
+    
+    def get(self, request, *args, **kwargs):
+        users = CustomUser.objects.all()
+        breadcrumb_items = [
+            {'name': 'Menu', 'link': reverse('menu-principal')},
+            {'name': 'Administração', 'link': reverse('administracao')},
+            {'name': 'Lista de Funcionários', 'link': None},
+        ]
+        return render(request, self.template_name, {'users': users, 'breadcrumb_items': breadcrumb_items})
 
 ############## CRIAR GRUPO DE USUÁRIOS ##############
 
-class GroupCreateView(LoginRequiredMixin, View):
+class GroupCreateView(GroupRequiredMixin, LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
+    group_required = u"Admnistrador"
     template_name = 'grupos/criar_grupos.html'
-    def get(self, request):
+
+    def get(self, request, *args, **kwargs):
         form = GroupForm()
         return render(request, self.template_name, {'form': form})
 
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         form = GroupForm(request.POST)
         if form.is_valid():
             group = form.save()
-            form.save_m2m()  # Para salvar as permissões associadas
             return redirect('group_list')
         return render(request, self.template_name, {'form': form})
     
+    def get(self, request, *args, **kwargs):
+        form = GroupForm()
+        breadcrumb_items = [
+            {'name': 'Administração', 'link': reverse('administracao')},
+            {'name': 'Perfis de Acesso', 'link': reverse('group_list')},
+            {'name': 'Cadastrar Grupo de Usuário', 'link': None},
+        ]
+        return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
 
+    
 ############# ATUALIZAR GRUPO DE USUÁRIOS ##############
 
-class GroupUpdateView(LoginRequiredMixin, View):
+class GroupUpdateView(GroupRequiredMixin, LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
+    group_required = u"Admnistrador"
     template_name = 'grupos/editar_grupos.html'
-    def get(self, request, pk):
-        group = get_object_or_404(Group, pk=pk)
+
+    def get(self, request, *args, **kwargs):
+        group = get_object_or_404(Group, pk=self.kwargs['pk'])
         form = GroupForm(instance=group)
         return render(request, self.template_name, {'form': form})
 
-    def post(self, request, pk):
-        group = get_object_or_404(Group, pk=pk)
+    def post(self, request, *args, **kwargs):
+        group = get_object_or_404(Group, pk=self.kwargs['pk'])
         form = GroupForm(request.POST, instance=group)
         if form.is_valid():
             group = form.save()
             return redirect('group_list')
         return render(request, self.template_name, {'form': form})
     
+    def get(self, request, *args, **kwargs):
+        form = GroupForm()
+        breadcrumb_items = [
+            {'name': 'Administração', 'link': reverse('administracao')},
+            {'name': 'Perfis de Acesso', 'link': reverse('group_list')},
+            {'name': 'Editar Permissões de Usuário', 'link': None},
+        ]
+        return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
+
 
 ############# EXCLUIR GRUPO DE USUÁRIOS ##############
     
-
-class GroupDeleteView(LoginRequiredMixin, View):
+class GroupDeleteView(GroupRequiredMixin, LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
+    group_required = u"Admnistrador"
     template_name = 'grupos/excluir_grupos.html'
-    def get(self, request, pk):
-        group = get_object_or_404(Group, pk=pk)
+
+    def get(self, request, *args, **kwargs):
+        group = get_object_or_404(Group, pk=self.kwargs['pk'])
         return render(request, self.template_name, {'group': group})
 
-    def post(self, request, pk):
-        group = get_object_or_404(Group, pk=pk)
+    def post(self, request, *args, **kwargs):
+        group = get_object_or_404(Group, pk=self.kwargs['pk'])
         group.delete()
         return redirect('group_list')
     
@@ -141,6 +189,16 @@ class GroupDeleteView(LoginRequiredMixin, View):
 class GroupListView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
     template_name = 'grupos/listar_grupos.html'
-    def get(self, request):
+
+    def get(self, request, *args, **kwargs):
         groups = Group.objects.all()
         return render(request, self.template_name, {'groups': groups})
+
+    def get(self, request, *args, **kwargs):
+        groups = Group.objects.all()
+        breadcrumb_items = [
+            {'name': 'Menu', 'link': reverse('menu-principal')},
+            {'name': 'Administração', 'link': reverse('administracao')},
+            {'name': 'Lista de Perfis de Acesso', 'link': None},
+        ]
+        return render(request, self.template_name, {'groups': groups, 'breadcrumb_items': breadcrumb_items})

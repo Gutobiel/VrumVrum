@@ -7,14 +7,20 @@
 Cadastrar Funcionário
 {% endblock %}
 
-{%block 'head'%}
+{% block 'head' %}
 {% block additional_css %}
 <link rel="stylesheet" href="{% static '/css/cadastro.css' %}">
 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 {% endblock %}
-{%endblock%}
+{% endblock %}
 
 {% block content %}
+
+<div class="col-md-9 col-lg-10 px-md-4 mt-3">
+    {% block breadcrumbs %}
+         {% include 'breadcrumbs.html' with breadcrumb_items=breadcrumb_items %}
+    {% endblock %}
+</div>
 
 <main role="main" class="col-md-9 col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -29,17 +35,34 @@ Cadastrar Funcionário
 
         <div class="col-md-6">
             <label for="nome-completo" class="form-label">Nome Completo</label>
-            {{form.nome_completo}}
+            {{ form.nome_completo }}
+            {% if form.nome_completo.errors %}
+                <div class="text-danger mx-auto">
+                    {{ form.nome_completo.errors }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="col-md-6">
             <label for="login-usuario" class="form-label">Login do Usuário</label>
-            {{form.username}}
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="text-danger">
+                    {{ form.username.errors }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="col-md-12">
             <label for="email" class="form-label">E-mail</label>
-            {{form.email}}
+            <div class="input-group">
+                {{ form.email }}
+            </div>
+            {% if form.email.errors %}
+                <div class="text-danger">
+                    {{ form.email.errors }}
+                </div>
+            {% endif %}
         </div>
       
         <div class="col-md-6">
@@ -47,6 +70,11 @@ Cadastrar Funcionário
             <div class="input-group">
                 {{ form.password1 }}
             </div>
+            {% if form.password1.errors %}
+                <div class="text-danger">
+                    {{ form.password1.errors }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="col-md-6">
@@ -54,41 +82,81 @@ Cadastrar Funcionário
             <div class="input-group">
                 {{ form.password2 }}
             </div>
+            {% if form.password2.errors %}
+                <div class="text-danger">
+                    {{ form.password2.errors }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="col-md-4">
             <label for="celular" class="form-label">Celular</label>
-            {{form.celular}}
+            {{ form.celular }}
+            {% if form.celular.errors %}
+                <div class="text-danger">
+                    {{ form.celular.errors }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="col-md-8">
             <label for="cargo" class="form-label">Cargo</label>
-            {{form.cargo }}
+            {{ form.cargo }}
+            {% if form.cargo.errors %}
+                <div class="text-danger">
+                    {{ form.cargo.errors }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="col-md-6">
             <label for="orgao" class="form-label">Orgão</label>
-            {{form.orgao }}
+            {{ form.orgao }}
+            {% if form.orgao.errors %}
+                <div class="text-danger text-start">
+                    {{ form.orgao.errors }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="col-md-6">
             <label for="setor" class="form-label">Setor</label>
-            {{form.setor}}
+            {{ form.setor }}
+            {% if form.setor.errors %}
+                <div class="text-danger">
+                    {{ form.setor.errors }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="col-md-6">
             <label for="status" class="form-label">Status</label>
-                {{form.status}}
+            {{ form.status }}
+            {% if form.status.errors %}
+                <div class="text-danger">
+                    {{ form.status.errors }}
+                </div>
+            {% endif %}
         </div>
         
         <div class="col-md-6">
             <label for="tipo-de-acesso" class="form-label">Tipo de acesso</label>
-            {{form.groups }}
+            {{ form.groups }}
+            {% if form.groups.errors %}
+                <div class="text-danger">
+                    {{ form.groups.errors }}
+                </div>
+            {% endif %}
         </div>
     
         <div class="mb-3 col-md-12">
             <label for="observacoes" class="form-label">Observações</label>
-            {{form.observacoes}}
+            {{ form.observacoes }}
+            {% if form.observacoes.errors %}
+                <div class="text-danger">
+                    {{ form.observacoes.errors }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-5"> 
@@ -96,7 +164,5 @@ Cadastrar Funcionário
         </div>
     </form>
 </main>
-
-
 
 {% endblock %}

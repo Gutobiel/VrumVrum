@@ -43,6 +43,7 @@
     color: rgb(90, 83, 83);
 }
 
+
     @media screen and (max-width: 768px) {
 
         .menu-item {
@@ -58,6 +59,10 @@
         .menu-item:hover {
             transform: none; /* Remove o efeito de transformação */
             box-shadow: none; /* Remove o efeito de sombra */
+        }
+
+        .rodape-info {
+            text-align: center;
         }
         
     }
