@@ -1,0 +1,169 @@
+/* Estilo para o corpo da página */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Estilo para a imagem no cabeçalho */
+#Header img {
+    height: 50px; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o título no cabeçalho */
+#Header h1 {
+    margin-left: 20px;
+}
+
+/* Estilo para o menu lateral */
+#MenuLateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px; /* Largura do menu lateral */
+    background: linear-gradient(to bottom right, #000000, #1a386d);
+}
+
+/* Estilo para a lista do menu */
+#MenuLateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para os itens do menu */
+#MenuLateral li {
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilo para os links do menu */
+#MenuLateral a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo para as imagens nos links do menu */
+#MenuLateral img {
+    width: 40px; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o botão Home */
+#Home {
+    margin-top: 10px;
+    margin-bottom: 50px; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o botão Sair */
+#Sair {
+    position: absolute;
+    bottom: 20px; /* Ajuste conforme necessário */
+    left: 50%; /* Centralizar */
+    transform: translateX(-50%);
+}
+
+/* Estilo para os outros itens do menu */
+#Perfil, 
+#Transito,
+#Semaforos,
+#Pedestres,
+#Acidentes,
+#Relatorio {
+    margin-top: 20px; /* Ajuste conforme necessário */
+}
+/* Estilo para o cabeçalho */
+/* Estilo para o cabeçalho */
+#Header {
+    position: fixed;
+    top: 0;
+    left: 82px;
+    height: 60px; /* Altura do cabeçalho */
+    width: calc(100% - 120px); /* A largura é ajustada para ocupar o espaço restante */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: linear-gradient(to bottom right, #000000, #1a386d); /* Cor de fundo primária */
+    color: aliceblue; /* Cor da fonte primária */
+    font-family: "Poppins", sans-serif; /* Fonte primária */
+    border-bottom: 3px solid #1a386d; /* Cor da borda inferior */
+    z-index: 1; /* Para garantir que o cabeçalho fique acima da barra lateral */
+}
+
+/* Estilo para o contêiner de foto e nome */
+#FotoENome {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para a imagem no cabeçalho */
+#FotoENome img {
+    height: 50px; /* Ajuste conforme necessário */
+    margin-right: 10px; /* Espaçamento entre a foto e o texto */
+}
+
+/* Estilo para o título no cabeçalho (nome do usuário) */
+#FotoENome h1 {
+    margin: 0; /* Remover margens padrão */
+    color: white; /* Cor branca */
+}
+
+/* BARRA DE PESQUISA */
+#divBusca {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Move para o final */
+    border: 1px solid white; /* Adiciona uma borda */
+    border-radius: 30px; /* Adiciona um raio de borda para arredondar os cantos */
+    padding: 1px;
+}
+
+
+
+.campo__pesquisa {
+    background-color: transparent;
+    border: 1px solid var(--cor-fonte-primaria);
+    color: var(--cor-fonte-primaria);
+    border-radius: 30px;
+    padding: 5px;
+    width: 250px;
+    min-width: 0;
+}
+
+
+.campo__pesquisa::placeholder {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: var(--cor-fonte-primaria);
+    background: url(/assets/Vector.svg) no-repeat;
+    background-position: 1.5em;
+}
+.placeholder-hidden::placeholder {
+    color: transparent;
+    background: none;
+ }
+ 
+ .campo__pesquisa:focus {
+    border-color: var(--cor-fonte-primaria); /* Cor da borda ao focar */
+    border-width: 1px; /* Largura da borda ao focar */
+}
+/* Ícone do filtro */
+#FiltroHeader {
+    width: 15px; /* Diminui o tamanho */
+}
+
+/* Linha divisória */
+#Divisor {
+    height: 30px; /* Altura da linha igual à altura da barra de pesquisa */
+    width: 1px;
+    background-color: #ccc; /* Cor da linha */
+}
+

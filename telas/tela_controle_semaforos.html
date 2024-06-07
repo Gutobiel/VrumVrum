@@ -1,0 +1,89 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Semáforos{% endblock title %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tela_controle_semaforos.css">
+    <title>Controle de Semáforo</title>
+</head>
+<body>
+    <div id="Semaforo-Content" class="container">
+        <div class="left-section">
+            <h1>SEMÁFORO</h1>
+            <div id="line-semaforo"></div>
+            <p id="descricao-semaforo">Abaixo você encontra informações sobre os semáforos, acesso a câmeras próximas e opções para gerenciar os semáforos.</p>
+
+            <!-- TABELA - LISTA DE SEMAFOROS -->
+            <div id="Tabela-semaforo">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th width="50">Visualizar</th>
+                            <th>Código</th>
+                            <th>Endereço</th>
+                            <th>Tipo</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th width="180">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for rs in semaforos %}
+                        <tr>
+                            <td>
+                                <a href="ver/{{ rs.id }}" class="btn btn-outline-primary">+Info</a>
+                            </td>
+                            <td>{{ rs.id }}</td>
+                            <td>{{ rs.endereco }}</td>
+                            <td>{{ rs.tipo }}</td>
+                            <td>{{ rs.marca }}</td>
+                            <td>{{ rs.modelo }}</td>
+                            <td>
+                                <a href="edit/{{ rs.id }}" class="btn btn-outline-success">Editar</a> | <a href="delete/{{ rs.id }}" class="btn btn-outline-danger">Deletar</a>
+                            </td>
+                        </tr>
+                        {% endfor %} 
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Recursos -->
+            <div id="Recursos-semaforo">
+                <h2>INSIRA O LOCAL</h2>
+                <form action='/' method='post'>
+                    <input type='text' name='pesquisa' placeholder='Digite o id do semaforo'>
+                    <button type='submit'>Consultar</button>
+                </form>
+                <button><a href="/semaforo/aovivo/index.html">AO VIVO</a></button>
+                <button>Gravação</button>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="control-container">
+                <h2>CONTROLE</h2>
+                <button class="control-button highlight">TORNAR INTERMITENTE</button>
+                <button class="control-button">PROGRAMAR EVENTOS</button>
+                <button class="control-button"><a href="addSemaforo.html">ADICIONAR SEMÁFORO</a></button>
+                <button class="control-button">SINCRONIZAR SEMÁFORO</button>
+            </div>
+            <div class="report-container">
+                <div class="chart">
+                    <div style="height: 40%;"></div>
+                    <div style="height: 60%;"></div>
+                    <div style="height: 50%;"></div>
+                    <div style="height: 70%;"></div>
+                </div>
+                <button class="report-button">GERAR RELATÓRIO</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock content %}

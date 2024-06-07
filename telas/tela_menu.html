@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VrumVrum</title>
+  <link rel="stylesheet" href="tela_menu.css">
+</head>
+<body>
+    <header class="container">
+        <div id="Header">
+            <div id="FotoENome">
+                <img src="/imagens/imagens_tela_menu/WhatsApp Image 2024-05-30 at 16.33.13.jpeg" alt="FotoHeader">
+                <h1>Olá, {{nome_usuario}}</h1>
+            </div>
+            <div id="divBusca">
+                <!-- Campo de pesquisa -->
+                <input type="search" class="campo__pesquisa" placeholder="Pesquisar...">
+            </div> 
+        </div>
+    
+        <nav id="MenuLateral">
+            <ul>
+                <li><a href=""><img src="/imagens/imagens_tela_menu/normal_u42.png" id="Home" alt ="home"></a></li>
+                <li><a href=""><img src="/imagens/imagens_tela_menu/normal_u44.png" id="Perfil"></a></li>
+                <li><a href=""><img src="/imagens/imagens_tela_menu/normal_u45.png" id="Transito"></a></li>
+                <li><a href=""><img src="/imagens/imagens_tela_menu/normal_u46.png" id="Semaforos"></a></li>
+                <li><a href=""><img src="/imagens/imagens_tela_menu/normal_u47.png" id="Pedestres"></a></li>
+                <li><a href=""><img src="/imagens/imagens_tela_menu/normal_u48.png" id="Acidentes"></a></li>
+                <li><a href=""><img src="/imagens/imagens_tela_menu/normal_u49.png" id="Relatorio"></a></li>
+                <li><a href=""><img src="/imagens/imagens_tela_menu/normal_u50.png" id="Sair"></a></li>
+            </ul>
+        </nav>
+    </header>    
+    <main>
+    {% block content %}
+        <!-- Aqui vai o conteudo da outra página -->
+    {% endblock content %}
+</main>
+</body>
+<script src="tela_menu.js"></script>
+</html>

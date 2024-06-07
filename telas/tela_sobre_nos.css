@@ -1,0 +1,46 @@
+ /* Padrão para as telas*/
+ :root { 
+    --cor-de-fundo-primaria: linear-gradient(to bottom right, #000000, #1a386d);
+    --cor-de-fundo-secundaria: #9DB1D1;
+    --cor-de-fundo-terciaria: #DBDBE4;
+    --cor-fonte-primaria:aliceblue;
+    --cor-fonte-secundaria: #1a386d;
+    --fonte-primaria: "Poppins", sans-serif;
+    --fonte-secundaria: "Bebas Neue", sans-serif;
+}
+
+ /* início do css*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte-primaria);
+    background: var(--cor-de-fundo-primaria);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: var(--cor-fonte-primaria);
+    margin-top: 20px;
+}
+
+.box {
+    background: var(--cor-de-fundo-secundaria);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    text-align: center;
+    margin-top: 50px; /* tentando ajustar para deixar mais alinhada no centro da tela */
+}
+
+p {
+    margin-top: 20px;
+    line-height: 1.6;
+    color: var(--cor-fonte-primaria);
+}
