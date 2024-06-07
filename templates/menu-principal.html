@@ -42,30 +42,25 @@
       {% block content %}
       {% endblock %}
 
-           <!-- Rodapé -->
-<footer class="rodape">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-                <span>Entre em contato:</span>
-                <div class="d-inline-block ms-2">
-                    <img src="{% static 'assets/icone-email.svg' %}" alt="Ícone de email" width="20" height="20">
-                    <span>smvrumvrum@gmail.com</span>
-                </div>
-                <div class="d-inline-block ml-3 ms-2">
-                    <img src="{% static 'assets/icone-telefone.svg' %}" alt="Ícone de telefone" width="20" height="20">
-                    <span>(61) 1234-5678</span>
-                </div>
-                <div class="info mt-2"> <!-- Alterado para mt-2 -->
-                    <span>Projeto Integrador - Ceub</span>
-                </div>
-                <div class="info"> <!-- Alterado para mt-2 -->
-                    <span>VrumVrum 2024</span>
+<!-- Rodapé -->
+    <footer class="rodape py-4">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-6 text-end">
+                    <span>Entre em contato:</span>
+                    <div class="d-inline-block ms-2">
+                        <i class="bi bi-envelope"></i>
+                        <span>smvrumvrum@gmail.com</span>
+                    </div>
+                    <div class="d-inline-block ms-2">
+                        <i class="bi bi-telephone"></i>
+                        <span>(61) 1234-5678</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+
 
     </div>
   </div>
