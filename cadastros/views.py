@@ -98,10 +98,6 @@ class UserListView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         users = CustomUser.objects.all()
-        return render(request, self.template_name, {'users': users})
-    
-    def get(self, request, *args, **kwargs):
-        users = CustomUser.objects.all()
         breadcrumb_items = [
             {'name': 'Menu', 'link': reverse('menu-principal')},
             {'name': 'Administração', 'link': reverse('administracao')},
@@ -118,23 +114,29 @@ class GroupCreateView(GroupRequiredMixin, LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         form = GroupForm()
-        return render(request, self.template_name, {'form': form})
+        
+        breadcrumb_items = [
+            {'name': 'Administração', 'link': reverse('administracao')},
+            {'name': 'Perfis de Acesso', 'link': reverse('group_list')},
+            {'name': 'Cadastrar Grupo de Usuário', 'link': None},
+        ]
+        
+        return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
 
     def post(self, request, *args, **kwargs):
         form = GroupForm(request.POST)
         if form.is_valid():
             group = form.save()
             return redirect('group_list')
-        return render(request, self.template_name, {'form': form})
-    
-    def get(self, request, *args, **kwargs):
-        form = GroupForm()
+        
         breadcrumb_items = [
             {'name': 'Administração', 'link': reverse('administracao')},
             {'name': 'Perfis de Acesso', 'link': reverse('group_list')},
             {'name': 'Cadastrar Grupo de Usuário', 'link': None},
         ]
+        
         return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
+
 
     
 ############# ATUALIZAR GRUPO DE USUÁRIOS ##############
@@ -143,11 +145,20 @@ class GroupUpdateView(GroupRequiredMixin, LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
     group_required = u"Admnistrador"
     template_name = 'grupos/editar_grupos.html'
+    
 
     def get(self, request, *args, **kwargs):
         group = get_object_or_404(Group, pk=self.kwargs['pk'])
         form = GroupForm(instance=group)
-        return render(request, self.template_name, {'form': form})
+        
+        breadcrumb_items = [
+            {'name': 'Administração', 'link': reverse('administracao')},
+            {'name': 'Perfis de Acesso', 'link': reverse('group_list')},
+            {'name': 'Editar Permissões de Usuário', 'link': None},
+        ]
+        
+        return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
+
 
     def post(self, request, *args, **kwargs):
         group = get_object_or_404(Group, pk=self.kwargs['pk'])
@@ -155,16 +166,15 @@ class GroupUpdateView(GroupRequiredMixin, LoginRequiredMixin, View):
         if form.is_valid():
             group = form.save()
             return redirect('group_list')
-        return render(request, self.template_name, {'form': form})
-    
-    def get(self, request, *args, **kwargs):
-        form = GroupForm()
+        
         breadcrumb_items = [
             {'name': 'Administração', 'link': reverse('administracao')},
             {'name': 'Perfis de Acesso', 'link': reverse('group_list')},
             {'name': 'Editar Permissões de Usuário', 'link': None},
         ]
+        
         return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
+    
 
 
 ############# EXCLUIR GRUPO DE USUÁRIOS ##############
@@ -190,9 +200,6 @@ class GroupListView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
     template_name = 'grupos/listar_grupos.html'
 
-    def get(self, request, *args, **kwargs):
-        groups = Group.objects.all()
-        return render(request, self.template_name, {'groups': groups})
 
     def get(self, request, *args, **kwargs):
         groups = Group.objects.all()
