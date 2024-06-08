@@ -17,7 +17,13 @@ class RegisterView(GroupRequiredMixin, LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         form = CustomUserCreationForm()
-        return render(request, self.template_name, {'form': form})
+        breadcrumb_items = [
+            {'name': 'Administração', 'link': reverse('administracao')},
+            {'name': 'Lista de Funcionários', 'link': reverse('user_list')},
+            {'name': 'Cadastrar Funcionário', 'link': None},
+        ]
+        return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
+
 
     def post(self, request, *args, **kwargs):
         form = CustomUserCreationForm(request.POST)
@@ -31,14 +37,6 @@ class RegisterView(GroupRequiredMixin, LoginRequiredMixin, View):
             return redirect('home')
         return render(request, self.template_name, {'form': form})
     
-    def get(self, request, *args, **kwargs):
-        form = CustomUserCreationForm()
-        breadcrumb_items = [
-            {'name': 'Administração', 'link': reverse('administracao')},
-            {'name': 'Lista de Funcionários', 'link': reverse('user_list')},
-            {'name': 'Cadastrar Funcionário', 'link': None},
-        ]
-        return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
 
 
 ########### ATUALIZAR OS DADOS DE UM USUARIO ###############
@@ -51,7 +49,14 @@ class UpdateUserView(GroupRequiredMixin, LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         user = get_object_or_404(CustomUser, pk=self.kwargs['pk'])
         form = CustomUserChangeForm(instance=user)
-        return render(request, self.template_name, {'form': form})
+        
+        breadcrumb_items = [
+            {'name': 'Administração', 'link': reverse('administracao')},
+            {'name': 'Lista de Funcionários', 'link': reverse('user_list')},
+            {'name': 'Editar Dados de Cadastro', 'link': None},
+        ]
+        
+        return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
 
     def post(self, request, *args, **kwargs):
         user = get_object_or_404(CustomUser, pk=self.kwargs['pk'])
@@ -61,17 +66,7 @@ class UpdateUserView(GroupRequiredMixin, LoginRequiredMixin, View):
             return redirect('user_list')
         return render(request, self.template_name, {'form': form})
     
-    def get(self, request, *args, **kwargs):
-        user = get_object_or_404(CustomUser, pk=self.kwargs['pk'])
-        form = CustomUserChangeForm(instance=user)
-        
-        breadcrumb_items = [
-            {'name': 'Administração', 'link': reverse('administracao')},
-            {'name': 'Lista de Funcionários', 'link': reverse('user_list')},
-            {'name': 'Editar Dados de Cadastro', 'link': None},
-        ]
-        
-        return render(request, self.template_name, {'form': form, 'breadcrumb_items': breadcrumb_items})
+
     
 ############ EXCLUIR UM USUARIO ##############
 

@@ -16,7 +16,7 @@ body {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   font-size: 1.5rem; /* Tamanho da fonte */
+   font-size: 1.5rem;
    font-family: var(--fonte-secundaria);
 }
 
@@ -126,9 +126,8 @@ label {
    margin-bottom: 5px; /* Espaçamento inferior entre a label e o próximo elemento */
 }
 
-/* Estilos para os campos de entrada (inputs) */
+/* Estilos para os campos de entrada */
 input[type="text"],
-input[type="email"],
 input[type="password"] {
    width: 20rem; /* Largura total do campo de entrada */
    padding: 10px;
@@ -157,3 +156,4 @@ input[type="password"] {
 .esqueceu-senha:hover {
    text-decoration: underline;
 }
+
