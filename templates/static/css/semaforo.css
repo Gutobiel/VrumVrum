@@ -182,7 +182,7 @@
     border-radius: 10px;
 }
 
-#Recursos-semaforo button {
+.form-custom button {
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
@@ -192,10 +192,11 @@
     text-align: center;
 }
 
-#Recursos-semaforo button a {
+#Recursos-semaforo a {
     text-decoration: none;
-    color: inherit;
+    color: var(--cor-fonte-primaria);
 }
+
 
 .controles {
     text-align: center;
@@ -297,20 +298,6 @@
     border-radius: 10px;
 }
 
-#Recursos-semaforo button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    font-size: 14px;
-    text-align: center;
-}
-
-#Recursos-semaforo button a {
-    text-decoration: none;
-    color: inherit;
-}
 
 .controles {
     text-align: center;

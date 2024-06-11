@@ -3,7 +3,7 @@
 {% load static %}
 
 
-{% block title %} Adicionar Semáforo{% endblock title %}
+{% block title %} Atualizar Semáforo{% endblock title %}
 
 
 {%block 'head'%} 
@@ -23,8 +23,8 @@
 </div>
 
     <div id="Formulario-semaforo">
-        <h1>Adicionar Semáforo</h1>
-        <p>Preencha o formulário abaixo para adicionar um novo semáforo.</p>
+        <h1>Atualizar dados do Semáforo</h1>
+        <p>Atualize os detalhes do semáforo abaixo.</p>
         <form action="" method="POST">
             {% csrf_token %}
             <div class="form-group">
@@ -48,7 +48,7 @@
                 {{ form.modelo }}
             </div>
             <div class="button-container">
-                <button type="submit" class="submit-button">Adicionar Semáforo</button>
+                <button type="submit" class="submit-button btn btn-warning text-white">Atualizar</button>
                 <a type="button" class="cancel-button" href="{%url 'semaforo'%}">Cancelar</a>
             </div>
         </form>
