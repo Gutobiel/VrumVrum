@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Vrum Vrum | Acidentes
+{% endblock title %}
+
+
+{%block 'head'%} 
+{% block additional_css %}
+<link rel="stylesheet" href="{%static 'css/styles.css'%}">
+<link rel="stylesheet" href="{%static 'css/eventos.css'%}">
+{%endblock%}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="col-md-9 col-lg-10 px-md-4 mt-3">
+    {% block breadcrumbs %}
+         {% include 'breadcrumbs.html' with breadcrumb_items=breadcrumb_items %}
+    {% endblock %}
+</div>
+<div class="col-md-9 col-lg-10 px-md-4 ">
+    <h1 class="title">Eventos</h1>
+    <hr>
+</div>
+
+<div class="content p-5">
+    <div class="main-content">
+        <a href="{% url 'adicionar-eventos' %}" class="btn btn-primary btn-sm">Adicionar Evento</a>
+        <table class="tabela-eventos table-striped">
+            <thead>
+                <tr>
+                    <th>Código Semáforo</th>
+                    <th>Data</th>
+                    <th>Motivo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>2024-05-20</td>
+                    <td>Show na praia</td>
+                    <td>
+                        <button onclick="visualizarEvento(1)" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></button>
+                        <button onclick="editarEvento(1)" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></button>
+                        <button onclick="excluirEvento(1)" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>2024-05-21</td>
+                    <td>Show Mane Garrincha</td>
+                    <td>
+                        <button onclick="visualizarEvento(2)" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></button>
+                        <button onclick="editarEvento(2)" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></button>
+                        <button onclick="excluirEvento(2)" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{%endblock%}

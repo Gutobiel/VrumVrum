@@ -1,11 +1,12 @@
 .title {
-    font-size: 1rem;
+    font-size: 2rem;
 }
+
 
 .container {
     display: flex;
     width: 90%;
-    max-width: 1500px;
+    max-width: 1600px; /* Aumenta a largura máxima para dar mais espaço */
     gap: 20px;
 }
 
@@ -16,11 +17,11 @@
 
 .left-section {
     background-color: var(--cor-de-fundo-secundaria);
-    flex: 4;
+    flex: 4; /* Aumenta a largura da seção à esquerda */
 }
 
 .right-section {
-    flex: 1.5; /* Ajuste a largura da seção direita */
+    flex: 2; /* Deixa a seção à direita mais quadrada */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -32,30 +33,25 @@
     margin-bottom: 10px;
 }
 
-.left-section p {
+.left-section p,
+.form-label {
     font-size: 14px;
     color: #3d4f6e;
-    margin-bottom: 10px; /* Reduzi a margem inferior */
+
 }
 
-#Mapa-transito {
-    margin-bottom: 20px;
+.form-custom {
     display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
     justify-content: center;
 }
 
-#Mapa-transito img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px; /* Adiciona borda arredondada à imagem */
-}
-
-form {
+.form-group {
     display: flex;
-    gap: 10px;
-    margin-bottom: 10px; /* Reduzi a margem inferior */
     align-items: center;
-    justify-content: center; /* Centraliza o formulário */
+    gap: 10px;
 }
 
 form input[type='text'] {
@@ -66,7 +62,7 @@ form input[type='text'] {
     font-size: 14px;
 }
 
-form button {
+.botao {
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
@@ -75,22 +71,13 @@ form button {
     cursor: pointer;
 }
 
-form button a {
-    text-decoration: none;
-    color: inherit;
-}
 
-
-.left-section .buttons button a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.control-container {
+.control-container, .report-container {
     background-color: var(--cor-de-fundo-secundaria);
     border-radius: 20px;
     padding: 20px;
     text-align: center;
+    flex: 1;
 }
 
 .control-container h2 {
@@ -107,26 +94,19 @@ form button a {
     border: none;
     border-radius: 10px;
     background-color: #d9d9d9;
-    color: #000;
+    color: var(--cor-preta);
     font-size: 14px;
     cursor: pointer;
 }
 
-.control-button:hover,
-.report-button:hover  {
-    color: var(--cor-hover-menu);
-
-}
-
 .control-button.highlight {
-    background-color: #ffd500;
+    background-color: #b90000;
+    color: #fff;
 }
 
-.report-container {
-    background-color: var(--cor-de-fundo-secundaria);
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
+.control-button:hover,
+.report-button:hover {
+    color: var(--cor-hover-menu);
 }
 
 .chart {
@@ -137,13 +117,13 @@ form button a {
     margin-bottom: 10px;
 }
 
-.chart div:hover{
-    background: var(--cor-hover-menu);
-}
-
 .chart div {
     width: 20%;
-    background-color: var(--cor-fonte-primaria);
+    background-color: white;
+}
+
+.chart div:hover{
+    background: var(--cor-hover-menu);
 }
 
 .report-button {
@@ -152,8 +132,70 @@ form button a {
     padding: 10px 0;
     border: none;
     border-radius: 10px;
+    background-color: #d9d9d9;
     color: #000;
     font-size: 14px;
     cursor: pointer;
     text-decoration: none;
+}
+
+.controles {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.controles h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.controles .button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.controles .button.highlight {
+    background-color: #ffeb84;
+}
+
+.relatorio {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.relatorio .chart {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.relatorio .chart div {
+    width: 20%;
+    background-color: white;
+}
+
+.relatorio .report-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#observacoes {
+    resize: none;
 }

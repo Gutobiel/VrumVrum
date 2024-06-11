@@ -43,10 +43,15 @@ class RelatorioView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         
-        breadcrumb_items = [
-            {'name': 'Menu', 'link': reverse('menu-principal')},
-            {'name': 'Relatório', 'link': None},
-        ]
+        # Obtém a URL da página anterior do cabeçalho HTTP Referer
+        referer = self.request.META.get('HTTP_REFERER')
+        
+        # Se houver uma URL anterior, adicione-a aos breadcrumbs
+        breadcrumb_items = [{'name': 'Menu', 'link': reverse('menu-principal')}]
+        if referer:
+            breadcrumb_items.append({'name': 'Voltar', 'link': referer})
+        
+        breadcrumb_items.append({'name': 'Relatório', 'link': None})
         
         context['breadcrumb_items'] = breadcrumb_items
         return context

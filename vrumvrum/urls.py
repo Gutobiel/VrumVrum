@@ -8,6 +8,6 @@ urlpatterns = [
     path('', include ('usuarios.urls')),
     path('', include ('semaforos.urls')),
     path('', include ('transito.urls')),
-    # path('', include ('acidentes.urls')),
-    # path('', include ('pedestres.urls')),
+    path('', include ('acidentes.urls')),
+    path('', include ('eventos.urls')),
 ]

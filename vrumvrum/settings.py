@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'usuarios',
     'semaforos',
     'transito',
+    'acidentes',
+    'eventos',
     
 ]
 

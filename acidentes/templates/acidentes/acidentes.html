@@ -2,13 +2,15 @@
 
 {% load static %}
 
-{% block title %}Semáforos{% endblock title %}
+{% block title %}
+Vrum Vrum | Acidentes
+{% endblock title %}
 
 
 {%block 'head'%} 
 {% block additional_css %}
 <link rel="stylesheet" href="{%static 'css/styles.css'%}">
-<link rel="stylesheet" href="{%static 'css/semaforo.css'%}">
+<link rel="stylesheet" href="{%static 'css/acidentes.css'%}">
 {%endblock%}
 {% endblock %}
 
@@ -20,22 +22,20 @@
          {% include 'breadcrumbs.html' with breadcrumb_items=breadcrumb_items %}
     {% endblock %}
 </div>
-<div class="col-md-9 col-lg-10 px-md-4">
-    <h1>Semáforo</h1>
-    
-    <p id="descricao-semaforo">Abaixo você encontra informações sobre os semáforos, acesso a câmeras próximas e opções para gerenciar os semáforos.</p>
+<div class="col-md-9 col-lg-10 px-md-4 ">
+    <h1 class="title">Acidentes</h1>
     <hr>
 </div>
-       
 
     <div id="Semaforo-Content" class="container">
         <div class="left-section">
-            <!-- TABELA - LISTA DE SEMAFOROS -->
+            
+            <div id="line-semaforo"></div>
             <div id="Tabela-semaforo">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th width="50">Visualizar</th>
+                            <th width="50">Info+</th>
                             <th>Código</th>
                             <th>Endereço</th>
                             <th>Tipo</th>
@@ -63,24 +63,40 @@
                     </tbody>
                 </table>
             </div>
-
-            <!-- Recursos -->
-            <div id="Recursos-semaforo">
-                <h2>INSIRA O LOCAL</h2>
-                <form action='/' method='post'>
-                    <input type='text' name='pesquisa' placeholder='Digite o id do semaforo'>
-                    <button type='submit'>Consultar</button>
-                </form>
-                <button><a href="#">AO VIVO</a></button>
-                <button>Gravação</button>
+            <p class="form-label">INSIRA O LOCAL</p>
+            <form action='/' method='post' class="form-custom">
+                <input type='text' name='pesquisa' placeholder='Digite o id do semaforo'>
+                <button class="botao" type='submit'>Consultar</button>
+            </form>
+            <!-- Gravidade -->
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="gravidade" class="form-label">GRAVIDADE</label>
+                    <select id="gravidade" class="form-select">
+                        <option value="1">Leve</option>
+                        <option value="2">Média</option>
+                        <option value="3">Grave</option>
+                    </select>
+                </div>
+            
+                <div class="col-md-9">
+                    <label for="observacoes" class="form-label">OBSERVAÇÕES</label>
+                    <textarea id="observacoes" class="form-control" rows="10"></textarea>
+                </div>
             </div>
+
+            <div class="buttons text-center mt-4">
+                <button class="btn btn-primary btn-sm col-md-4 p-2"><a href="#"></a>AO VIVO</button>
+                <button class="btn btn-danger btn-sm col-md-4 p-2">GRAVAR</button>
+            </div>
+     
         </div>
         <div class="right-section">
             <div class="control-container">
                 <h2>CONTROLE</h2>
-                <button class="control-button highlight">TORNAR INTERMITENTE</button>
-                <button class="control-button">PROGRAMAR EVENTOS</button>
-                <button class="control-button"><a href="{% url 'adicionar-semaforo'%}">ADICIONAR SEMÁFORO</a></button>
+                <button class="control-button highlight">CHAMAR EMERGÊNCIA</button>
+                <button class="control-button">DEFINIR MENSAGEM</button>
+                <button class="control-button">IDENTIFICAR ENVOLVIDOS</button>
                 <button class="control-button">SINCRONIZAR SEMÁFORO</button>
             </div>
             <div class="report-container">
@@ -94,6 +110,4 @@
             </div>
         </div>
     </div>
-
-
-{% endblock %}
+ {%endblock%}
