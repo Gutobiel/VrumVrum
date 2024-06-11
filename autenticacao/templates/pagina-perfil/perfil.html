@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- {% load crispy_forms_tags %} -->
+
+{% block title %}
+Vrum Vrum | Perfil
+{% endblock %}
+
+{% block 'head' %}
+{% block additional_css %}
+<link rel="stylesheet" href="{% static '/css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+
+<div class="col-md-9 col-lg-10 px-md-4 mt-3 p-3">
+  {% block breadcrumbs %}
+      {% include 'breadcrumbs.html' with breadcrumb_items=breadcrumb_items %}
+  {% endblock %}
+</div>
+<div class="container mt-5 p-5">
+  <div class="row">
+    <div class="col-md-3 text-center">
+        <img src="{% static 'assets/icone-usuario.svg'%}" alt="logo-usuario" class="img-fluid w-75">
+    <div id="update-logo">
+        <button class="btn btn-primary mt-2">ATUALIZAR FOTO</button>
+    </div>
+    </div>
+
+    <div class="col-md-8">
+      <form id="cadastro-perfil">
+        <div class="row mb-3">
+          <div class="col-8">
+            <label>Nome Completo</label>
+            <input type="text" class="form-control" placeholder="ex: João da Silva" disabled>
+          </div>
+          <div class="col-4">
+            <label>Login Usuário</label>
+            <input type="text" class="form-control" placeholder="ex: 91KCJDK" disabled>
+          </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label>E-mail</label>
+              <input type="email" class="form-control" placeholder="joao@exemplo.com" disabled>
+            </div>
+            <div class="col">
+              <label>Celular</label>
+              <input type="text" class="form-control" placeholder="(XXX) XXXXX-XXXX" disabled>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+                <label>Cargo</label>
+              <input type="text" class="form-control" placeholder="Analista de Trafégo" disabled>
+            </div>
+            <div class="col">
+                <label>Setor</label>
+              <input type="text" class="form-control" placeholder="Engenharia de Tráfego e Mobilidade Urbana" disabled>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label>Orgão</label>
+              <input type="text" class="form-control" placeholder="Departamento de Trânsito do Distrito Federal" disabled>
+            </div>
+            <div class="col">
+              <label>Senha</label>
+              <input type="text" class="form-control" placeholder="**********" disabled>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="col-md-4 btn btn-primary btn-block mt-5">Atualizar</button>
+            <a href="{% url 'menu-principal' %}" class="col-md-4 btn btn-secondary btn-block mt-5">Cancelar</a>
+          </div>  
+      </form>
+    </div>
+  </div>
+</div>
+
+</main>
+    
+
+{% endblock %}

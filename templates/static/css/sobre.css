@@ -1,0 +1,31 @@
+.main-container .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: var(--cor-fonte-primaria);
+    font-family: var(--fonte-primaria);
+    margin-top: 20px;
+}
+
+.box {
+    background: var(--cor-de-fundo-secundaria);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    text-align: center;
+    margin-top: 50px; /* tentando ajustar para deixar mais alinhada no centro da tela */
+    margin-bottom: 20px;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-family: var(--fonte-primaria);
+    line-height: 1.6;
+    color: var(--cor-fonte-primaria);
+}

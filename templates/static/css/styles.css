@@ -22,5 +22,8 @@
     --cor-vermelha: #ff0000;
     --fonte-primaria: "Poppins", sans-serif;
     --fonte-secundaria: "Bebas Neue", sans-serif;
-    
+}
+
+body {
+    height: 100vh;
 }

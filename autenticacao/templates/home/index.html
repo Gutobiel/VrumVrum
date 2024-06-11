@@ -1,47 +1,7 @@
+{% extends "base-home.html" %}
 {% load static %}
 
-{% load crispy_forms_tags %} 
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Vrum Vrum{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-
-    {%block 'head'%} {%endblock%}
-    {% block additional_css %}{% endblock %}
-
-
 {% block content %}
-
-<!-- Menu Superior -->
-<nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="{% url 'home'%}">
-        <img src="{% static 'assets/sidebar-semaforo-icone.svg'%}" alt="ícone de semáforo" width="30" height="30">
-        Vrum Vrum
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">SOBRE NÓS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">SUPORTE</a>
-            </li>
-            <li class="nav-item">
-                <input type="search" class="form-control" placeholder="Pesquisar...">
-            </li>
-        </ul>
-    </div>
-</nav>
 
 <!-- Conteúdo Principal -->
 <main class="container my-5">
@@ -62,34 +22,5 @@
         </div>
     </div>
 </main>
-
-<!-- Rodapé -->
-<footer class="rodape">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-                <span>Entre em contato:</span>
-                <div class="d-inline-block ms-2">
-                    <img src="{% static 'assets/icone-email.svg' %}" alt="Ícone de email" width="20" height="20">
-                    <span>smvrumvrum@gmail.com</span>
-                </div>
-                <div class="d-inline-block ml-3 ms-2">
-                    <img src="{% static 'assets/icone-telefone.svg' %}" alt="Ícone de telefone" width="20" height="20">
-                    <span>(61) 1234-5678</span>
-                </div>
-                <div class="info mt-2"> <!-- Alterado para mt-2 -->
-                    <span>Projeto Integrador - Ceub</span>
-                </div>
-                <div class="info"> <!-- Alterado para mt-2 -->
-                    <span>VrumVrum 2024</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 {% endblock %}

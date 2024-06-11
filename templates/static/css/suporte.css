@@ -1,0 +1,37 @@
+h1 {
+    color: var(--cor-fonte-primaria);
+}
+
+.box {
+    background: var(--cor-de-fundo-secundaria);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    text-align: center;
+    margin: 50px auto; /* Define margens automáticas para centralizar horizontalmente */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+p {
+    margin-top: 5px;
+    line-height: 1.6;
+    color: var(--cor-fonte-primaria);
+}
+
+label {
+    color: var(--cor-fonte-primaria);
+}
+
+.form-control-custom {
+    /* Adicione estilos personalizados aqui */
+    width: 100%; /* Define a largura para 100% */
+    padding: 8px; /* Adiciona um preenchimento interno */
+    border: 1px solid #ced4da; /* Adiciona uma borda */
+    border-radius: 4px; /* Adiciona bordas arredondadas */
+    box-sizing: border-box; /* Garante que a largura inclua a espessura da borda e do preenchimento */
+    margin-top: 8px; /* Adiciona um espaçamento superior */
+    margin-bottom: 8px; /* Adiciona um espaçamento inferior */
+}

@@ -1,0 +1,10 @@
+.container {
+    background: var(--cor-de-fundo-secundaria);
+    width: 20rem;
+    height: 30rem;
+    border-radius: 40px;
+}
+
+label {
+    color: var(--cor-fonte-primaria);
+}

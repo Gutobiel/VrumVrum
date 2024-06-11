@@ -48,7 +48,7 @@
                     <a href="{%url 'group_list'%}" class="sidebar-link">Perfis de Acesso</a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="{% url 'register'%}" class="sidebar-link">Cadastros</a>
+                    <a href="{% url 'cadastro'%}" class="sidebar-link">Cadastros</a>
                 </li>
                 <li class="sidebar-item">
                     <a href="{% url 'user_list'%}" class="sidebar-link">Lista de Funcionários</a>
@@ -60,21 +60,21 @@
           </li>
 
               <li class="sidebar-item">
-                <a href="#" class="sidebar-link">
+                <a href="{%url 'transito'%}" class="sidebar-link">
                   <img src="{% static 'assets/sidebar-transito-icone.svg'%}" alt="Ícone Trânsito" class="icon">
                   <span>Trânsito</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
-                <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                <a href="{%url 'semaforo'%}" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                     data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
                     <img src="{% static 'assets/sidebar-semaforo-icone.svg'%}" alt="Ícone Semáforo" class="icon">
                     <span>Semáforo</span>
                 </a>
                 <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                        <a href="{%url 'adicionar-semaforo'%}" class="sidebar-link collapsed" data-bs-toggle="collapse"
                             data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
                             Two Links
                         </a>
@@ -102,7 +102,7 @@
                 </a>
             </li>
             <li class="sidebar-item">
-              <a href="#" class="sidebar-link">
+              <a href="{%url 'relatorio'%}" class="sidebar-link">
                 <img src="{% static 'assets/sidebar-relatorio-icone.svg'%}" alt="Relatório" class="icon">
                 <span>Relatório</span>
               </a>
