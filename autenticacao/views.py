@@ -1,6 +1,9 @@
+from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from autenticacao.forms import PerfilForm
 
 class HomeView(TemplateView):
     template_name = 'home/index.html'
@@ -35,6 +38,13 @@ class AdminPaginaView(LoginRequiredMixin, TemplateView):
 class PerfilView(LoginRequiredMixin, TemplateView):
     login_url = reverse_lazy('login')
     template_name = 'pagina-perfil/perfil.html'
+
+
+    def get(self, request, *args, **kwargs):
+        user = request.user
+        form = PerfilForm(instance=user)
+        return render(request, self.template_name, {'form': form})
+    
 
 class RelatorioView(LoginRequiredMixin, TemplateView):
     login_url = reverse_lazy('login')
