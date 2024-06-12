@@ -41,6 +41,11 @@
 .rodape {
     background: rgba(169, 175, 186, 0.456);
     color: rgb(90, 83, 83);
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
 }
 
 

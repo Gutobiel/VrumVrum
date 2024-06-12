@@ -36,6 +36,7 @@
                 </a>
             </li>
            
+            {% if user.groups.all.0.name == 'Administrador' %}
             <li class="sidebar-item">
               <a href="{%url 'administracao'%}" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
               data-bs-target="#admin" aria-expanded="false" aria-controls="admin">
@@ -58,6 +59,8 @@
                 </li>
             </ul>
           </li>
+
+          {% endif %}
 
               <li class="sidebar-item">
                 <a href="{%url 'transito'%}" class="sidebar-link">

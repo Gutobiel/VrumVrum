@@ -26,6 +26,7 @@ Vrum Vrum | Menu Principal
             </a>
         </div>
       </div>
+      {% if user.groups.all.0.name == 'Administrador' %}
       <div class="col menu-item">
         <div class="p-4">
             <a href="{% url 'administracao'%}" class="menu-link">
@@ -34,6 +35,7 @@ Vrum Vrum | Menu Principal
             </a>
         </div>
       </div>
+      {%endif%}
       <div class="col menu-item">
         <div class="p-4">
             <a href="{%url 'transito'%}" class="menu-link">
@@ -76,6 +78,8 @@ Vrum Vrum | Menu Principal
       </div>
   </div>
   </div>
+  <br>
+  <br>
 
 
 {% endblock %}
