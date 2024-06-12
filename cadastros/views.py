@@ -34,7 +34,7 @@ class RegisterView(GroupRequiredMixin, LoginRequiredMixin, View):
                 user.set_password(generate_random_password())
             user.save()
             login(request, user)
-            return redirect('home')
+            return redirect('menu-principal')
         return render(request, self.template_name, {'form': form})
     
 
