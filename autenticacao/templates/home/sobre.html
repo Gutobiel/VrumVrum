@@ -1,0 +1,22 @@
+{% extends "base-home.html" %}
+{% load static %}
+
+{%block 'head'%} 
+{% block additional_css %}
+<title>{% block title %}Sobre Nós{% endblock %}</title>
+<link rel="stylesheet" href="{% static 'css/sobre.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css'%}">
+{%endblock%}
+{% endblock %}
+{% block content %}
+
+<main class="main-container">
+<div class="container mb-5 p-5">
+    <h1>Sobre nós</h1>
+    <div class="box">
+        <p>Somos um grupo dedicado a encontrar soluções para os desafios enfrentados pela sociedade em seu cotidiano. Nosso projeto começou com uma dor sentida pelos próprios desenvolvedores do software, e após validarmos essa questão com o público, percebemos que poderíamos aplicar nossa especialidade e paixão, a tecnologia, para resolvê-la. Assim surgiu o projeto Vrum Vrum, cujo objetivo é melhorar o trânsito por meio de soluções inteligentes. O software que desenvolvemos permite controlar os semáforos de forma mais eficiente, o que pode resultar em uma significativa melhoria no trânsito. Ao reduzir congestionamentos, aumentar a segurança nas vias e prevenir diversos outros problemas comuns em nosso cenário atual, nossa solução visa proporcionar uma experiência mais fluida e segura para todos os usuários das vias. Nosso compromisso é criar soluções inovadoras que tragam benefícios tangíveis para a comunidade.</p>
+    </div>
+</div>
+</main>
+
+{% endblock %}

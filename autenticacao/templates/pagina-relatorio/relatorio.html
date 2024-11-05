@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- {% load crispy_forms_tags %} -->
+
+{% block title %}
+Vrum Vrum | Relatório
+{% endblock %}
+
+{% block 'head' %}
+{% block additional_css %}
+<link rel="stylesheet" href="{% static '/css/styles.css' %}">
+<link rel="stylesheet" href="{% static '/css/relatorio.css' %}">
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="col-md-9 col-lg-10 px-md-4 mt-3 p-3">
+        {% block breadcrumbs %}
+            {% include 'breadcrumbs.html' with breadcrumb_items=breadcrumb_items %}
+        {% endblock %}
+    </div>
+
+
+<div class="container-relatorio">
+    <div id="conteudo-relatorio">
+        <div id="relatorio-compartilhado">
+            <img src="{%static 'assets/img-relatorio.png'%}" alt="relatorio-compartilhado">
+            <button type="button">COMPARTILHAR</button>
+        </div>
+        <div id="btns-formatos">
+   
+    <button type="button" onclick="enviarRelatorioPorEmail()">Enviar por E-mail</button>
+
+    </div>
+
+
+    </div>
+</div>
+
+<script>
+    const emailRelatorioUrl = "{% url 'enviar_relatorio_pdf' %}";
+    function enviarRelatorioPorEmail() {
+        console.log("Botão clicado");
+        window.location.href = emailRelatorioUrl;
+    }
+</script>
+
+{% endblock %}

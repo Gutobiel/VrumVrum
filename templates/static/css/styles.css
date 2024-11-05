@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url(/templates/static/css/cadastro.css);
+@import url(/templates/static/css/base.css);
+@import url(/templates/static/css/grupos.css);
+@import url(/templates/static/css/lista.css);
+@import url(/templates/static/css/login.css);
+@import url(/templates/static/css/pagina-menu.css);
+@import url(/templates/static/css/home.css);
+
+/* Definição das variáveis de cor e fonte */
+:root {
+    --cor-de-fundo-primaria: linear-gradient(to bottom right, #000000, #1a386d);
+    --cor-de-fundo-secundaria: #9DB1D1;
+    --cor-de-fundo-terciaria: #DBDBE4;
+    --cor-fonte-primaria:aliceblue;
+    --cor-fonte-secundaria: #1a386d;
+    --cor-preta: #000000;
+    --cor-branca: #ffffff;
+    --cor-hover: rgba(0, 166, 255, 0.76);
+    --cor-hover-menu: rgba(1, 107, 165, 0.956);
+    --cor-vermelha: #ff0000;
+    --fonte-primaria: "Poppins", sans-serif;
+    --fonte-secundaria: "Bebas Neue", sans-serif;
+}
+
+body {
+    height: 100vh;
+}

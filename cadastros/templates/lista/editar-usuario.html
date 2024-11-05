@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- {% load crispy_forms_tags %} -->
+
+{% block title %}
+Vrum Vrum | Editar Dados de Cadastro
+{% endblock %}
+
+{%block 'head'%}
+{% block additional_css %}
+<link rel="stylesheet" href="{% static '/css/cadastro.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+{% endblock %}
+{%endblock%}
+
+{% block content %}
+
+<div class="col-md-9 col-lg-10 px-md-4 mt-3 p-3">
+    {% block breadcrumbs %}
+         {% include 'breadcrumbs.html' with breadcrumb_items=breadcrumb_items %}
+    {% endblock %}
+</div>
+
+<main role="main" class="col-md-9 col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Editar Dados de Cadastro</h1>
+    </div>
+
+    <!-- Formulário -->
+    <form method="POST" action="" class="row g-3">
+        {% csrf_token %}
+        <!-- {% crispy form %}  -->
+        <!-- {{ form.non_field_errors }} -->
+
+        <div class="col-md-6">
+            <label for="nome-completo" class="form-label">Nome Completo</label>
+            {{form.nome_completo}}
+        </div>
+
+        <div class="col-md-6">
+            <label for="login-usuario" class="form-label">Login do Usuário</label>
+            {{form.username}}
+        </div>
+
+        <div class="col-md-6">
+            <label for="email" class="form-label">E-mail</label>
+            {{form.email}}
+        </div>
+      
+        <div class="col-md-6">
+            <label for="password1" class="form-label">Senha</label>
+            <div class="input-group">
+                {{ form.password }}
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="celular" class="form-label">Celular</label>
+            {{form.celular}}
+        </div>
+
+        <div class="col-md-8">
+            <label for="cargo" class="form-label">Cargo</label>
+            {{form.cargo }}
+        </div>
+
+        <div class="col-md-6">
+            <label for="orgao" class="form-label">Orgão</label>
+            {{form.orgao }}
+        </div>
+
+        <div class="col-md-6">
+            <label for="setor" class="form-label">Setor</label>
+            {{form.setor}}
+        </div>
+
+        <div class="col-md-6">
+            <label for="status" class="form-label">Status</label>
+                {{form.status}}
+        </div>
+        
+        <div class="col-md-6">
+            <label for="tipo-de-acesso" class="form-label">Tipo de acesso</label>
+            {{form.groups}}
+        </div>
+    
+        <div class="mb-3 col-md-12">
+            <label for="observacoes" class="form-label">Observações</label>
+            {{form.observacoes}}
+        </div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-5"> 
+            <button type="submit" class="btn btn-warning me-md-2">Atualizar</button>
+        </div>
+    </form>
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base-home.html" %}
+{% load static %}
+
+{%block 'head'%} 
+{% block additional_css %}
+<title>{% block title %}Sobre Nós{% endblock %}</title>
+<link rel="stylesheet" href="{% static 'css/suporte.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css'%}">
+{%endblock%}
+{% endblock %}
+{% block content %}
+
+<main class="main-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <h1 class="text-center">Suporte</h1>
+                <div class="box">
+                    <p>Se você tiver alguma dúvida, problema ou sugestão, entre em contato conosco. Estamos aqui para ajudar! Você pode nos contatar por e-mail, telefone ou preenchendo o formulário abaixo.</p>
+                    <form id="supportForm">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="nome">Nome:</label>
+                                <input type="text" class="form-control-custom" id="nome" name="nome" required>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label for="email">E-mail:</label>
+                                <input type="email" class="form-control-custom" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="regiao">Região:</label>
+                                <input type="text" class="form-control-custom" id="regiao" name="regiao" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="mensagem">Mensagem:</label>
+                                <textarea class="form-control-custom" id="mensagem" name="mensagem" rows="4" required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" onclick="submitForm(event)">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+{% endblock %}
+
+<script src="{% static 'js/suporte.js'%}"></script>

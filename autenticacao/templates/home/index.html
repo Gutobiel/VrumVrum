@@ -1,0 +1,26 @@
+{% extends "base-home.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Conteúdo Principal -->
+<main class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="apresentacao__conteudo mx-5">
+                <h1 class="title">O controle do trânsito nas suas mãos</h1>
+                <p class="apresentacao__conteudo__texto">Bem vindo ao sistema de controle de semáforos, onde a eficiência e segurança são prioridades. Otimize o fluxo de tráfego e garanta uma circulação mais suave em nossa cidade. Juntos, fazemos a diferença no trânsito!</p>
+                <div class="apresentacao__link">
+                    <a class="botao-acessar" href="{%url 'login'%}">Fazer login
+                        <img src="{%static 'assets/botao-acessar.svg'%}" alt="Acessar" width="35" height="35">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <img class="apresentacao__imagem" src="{%static 'assets/guarda-de-transito.svg'%}" alt="Ícone de Guarda de Trânsito">
+        </div>
+    </div>
+</main>
+
+{% endblock %}

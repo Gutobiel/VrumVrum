@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+Deletar Semáforo
+{% endblock %}
+
+{%block 'head'%}
+{% block additional_css %}
+<link rel="stylesheet" href="{% static '/css/semaforo.css' %}">
+{% endblock %}
+{%endblock%}
+
+{% block content %}
+
+<main role="main" class="col-md-9 col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Confirmação de Exclusão</h1>
+    </div>
+
+    <!-- Formulário -->
+    <form method="POST" action="" class="row g-3">
+        {% csrf_token %}
+     
+        <p>
+           Você tem certeza que deseja deleter o semáforo <strong>"{{semaforo.codigo}}"</strong>?
+        </p>
+ 
+        <button type="submit" class="col-md-4 btn btn-danger btn-block mx-1">Confirmar Exclusão</button>
+        <a href="{% url 'semaforo' %}" class="col-md-4 btn btn-secondary btn-block mx-1">Cancelar</a>
+    </form>
+</main>
+
+
+
+{% endblock %}

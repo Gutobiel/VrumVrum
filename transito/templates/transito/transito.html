@@ -1,0 +1,77 @@
+% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Trânsito{% endblock title %}
+
+
+{%block 'head'%} 
+{% block additional_css %}
+<link rel="stylesheet" href="{%static 'css/styles.css'%}">
+<link rel="stylesheet" href="{%static 'css/transito.css'%}">
+{%endblock%}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="col-md-9 col-lg-10 px-md-4 mt-3">
+    {% block breadcrumbs %}
+         {% include 'breadcrumbs.html' with breadcrumb_items=breadcrumb_items %}
+    {% endblock %}
+</div>
+<div class="col-md-9 col-lg-10 px-md-4 title">
+    <h2>Trânsito</h2>
+    <hr>
+</div>
+
+<div id="Transito-Content" class="container">
+    <div class="left-section">
+{% comment %}         <div id="toggle-button" class="buttons text-center col-md-12 mt-4">
+            <button class="btn btn-primary btn-sm col-md-4 p-2" onclick="toggleContent('mapa')">Mostrar Mapa</button>
+            <button class="btn btn-primary btn-sm col-md-4 p-2" onclick="toggleContent('video')">Mostrar Vídeo</button>
+        </div> {% endcomment %}
+
+        <!-- Mapa -->
+        <div id="Mapa-transito">
+{% comment %}             <a href="https://www.bing.com/maps/traffic">
+                <img src="{% static 'assets/transito-video.mp4' %}" alt="Mapa de Trânsito">
+            </a> {% endcomment %}
+            <video width="100%" controls>
+            <source src="https://drive.google.com/file/d/1HHV8-U58wMZZi9GvM_hrESOngvNZk71O/view?usp=drive_link" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+          </video>
+        </div>
+
+        <p>INSIRA O LOCAL</p>
+        <form action="/" method="post">
+            <input type="text" name="pesquisa" placeholder="Digite o id do semáforo">
+            <button type="submit">Consultar</button>
+        </form>
+
+        <div class="buttons text-center col-md-12 mt-4">
+            <button class="btn btn-primary btn-sm col-md-4 p-2"><a href="#">AO VIVO</a></button>
+            <button class="btn btn-danger btn-sm col-md-4 p-2">GRAVAR</button>
+        </div>
+    </div>
+
+    <div class="right-section">
+        <div class="control-container">
+            <h2>CONTROLE</h2>
+            <button class="control-button highlight">TORNAR INTERMITENTE</button>
+            <button class="control-button">PROGRAMAR EVENTOS</button>
+        </div>
+
+        <div class="report-container">
+            <div class="chart">
+                <div style="height: 40%;"></div>
+                <div style="height: 60%;"></div>
+                <div style="height: 50%;"></div>
+                <div style="height: 70%;"></div>
+            </div>
+            <a href="{% url 'relatorio' %}" class="report-button">GERAR RELATÓRIO</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
