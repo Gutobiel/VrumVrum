@@ -18,7 +18,6 @@ class PaginaAcidentesView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         # Recupera todos os semáforos
         semaforos = Semaforo.objects.all()
-        # Adiciona os semáforos ao contexto
         context['semaforos'] = semaforos
         return context
 

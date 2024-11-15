@@ -23,28 +23,27 @@ Vrum Vrum | Relatório
     </div>
 
 
-<div class="container-relatorio">
-    <div id="conteudo-relatorio">
-        <div id="relatorio-compartilhado">
-            <img src="{%static 'assets/img-relatorio.png'%}" alt="relatorio-compartilhado">
-            <button type="button">COMPARTILHAR</button>
+    <div class="container-relatorio">
+        <div id="conteudo-relatorio">
+            <div id="relatorio-compartilhado">
+                <img src="{% static 'assets/img-relatorio.png' %}" alt="relatorio-compartilhado">
+                <button type="button">COMPARTILHAR</button>
+            </div>
+            <div id="btns-formatos">
+                <form action="{% url 'enviar_relatorio_pdf' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Enviar por E-mail</button>
+                </form>
+            </div>
         </div>
-        <div id="btns-formatos">
-   
-    <button type="button" onclick="enviarRelatorioPorEmail()">Enviar por E-mail</button>
-
     </div>
-
-
-    </div>
-</div>
-
-<script>
+    
+<!-- <script>
     const emailRelatorioUrl = "{% url 'enviar_relatorio_pdf' %}";
     function enviarRelatorioPorEmail() {
         console.log("Botão clicado");
         window.location.href = emailRelatorioUrl;
     }
-</script>
+</script> -->
 
 {% endblock %}

@@ -52,7 +52,6 @@ class PerfilView(LoginRequiredMixin, TemplateView):
         return render(request, self.template_name, {'form': form})
     
 
-
 class RelatorioView(LoginRequiredMixin, TemplateView):
     login_url = reverse_lazy('login')
     template_name = 'pagina-relatorio/relatorio.html'
@@ -67,7 +66,8 @@ class RelatorioView(LoginRequiredMixin, TemplateView):
         context['breadcrumb_items'] = breadcrumb_items
         return context
 
-    def gerar_pdf(self):
+    @staticmethod
+    def gerar_pdf():
         data = {
             'Tipo de Veículo': ['Motos', 'Carros', 'Caminhões'],
             'Quantidade': [120, 350, 45]
@@ -86,22 +86,23 @@ class RelatorioView(LoginRequiredMixin, TemplateView):
         pdf_buffer.seek(0)
         return pdf_buffer
 
-    def enviar_pdf_por_email(self, request):
-        pdf_buffer = self.gerar_pdf()
+class EnviarRelatorioEmailView(LoginRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        print("View chamada com sucesso.")
+        pdf_buffer = RelatorioView.gerar_pdf()
+        pdf_content = pdf_buffer.getvalue()
+
         email = EmailMessage(
             subject="Relatório de Veículos",
             body="Segue em anexo o relatório de veículos em formato PDF.",
             from_email="seuemail@gmail.com",  # ou use 'EMAIL_HOST_USER' configurado no settings
             to=["destinatario@example.com"],
         )
-        email.attach('relatorio_veiculos.pdf', pdf_buffer.getvalue(), 'application/pdf')
+        email.attach('relatorio_veiculos.pdf', pdf_content, 'application/pdf')
         email.send()
-        return HttpResponse("E-mail enviado com sucesso.")
-    
-class EnviarRelatorioEmailView(LoginRequiredMixin, View):
- def get(self, request, *args, **kwargs):
-     relatorio_view = RelatorioView()
-     return relatorio_view.enviar_pdf_por_email(request)
+        pdf_buffer.close()  # Fecha o buffer após o uso
+
+        return HttpResponse("E-mail enviado com sucesso.") 
 
 
 

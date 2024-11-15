@@ -11,5 +11,5 @@ urlpatterns = [
     path('pagina-admin/', AdminPaginaView.as_view(), name='administracao'),
     path('perfil/', PerfilView.as_view(), name='perfil'),
     path('relatorio/', RelatorioView.as_view(), name='relatorio'),
-     path('relatorio/enviar_email/', EnviarRelatorioEmailView.as_view(), name='enviar_relatorio_pdf'),
+    path('relatorio/enviar_email/', EnviarRelatorioEmailView.as_view(), name='enviar_relatorio_pdf'),
 ]
