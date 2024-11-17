@@ -6,7 +6,6 @@ import pandas as pd
 from fpdf import FPDF
 from django.http import HttpResponse
 from django.core.mail import EmailMessage
-from django.http import HttpResponse
 from autenticacao.forms import PerfilForm
 from io import BytesIO
 from django.views import View
@@ -30,9 +29,6 @@ class SuporteView(TemplateView):
         contexto['pagina_atual'] = 'suporte'
         return contexto
 
-
-
-
 class MenuPrincipalView(LoginRequiredMixin, TemplateView):
     login_url = reverse_lazy('login')
     template_name = 'pagina-menu/pagina-menu.html'
@@ -45,12 +41,10 @@ class PerfilView(LoginRequiredMixin, TemplateView):
     login_url = reverse_lazy('login')
     template_name = 'pagina-perfil/perfil.html'
 
-
     def get(self, request, *args, **kwargs):
         user = request.user
         form = PerfilForm(instance=user)
         return render(request, self.template_name, {'form': form})
-    
 
 class RelatorioView(LoginRequiredMixin, TemplateView):
     login_url = reverse_lazy('login')
@@ -82,8 +76,9 @@ class RelatorioView(LoginRequiredMixin, TemplateView):
             pdf.cell(200, 10, txt=f"{row['Tipo de Veículo']}: {row['Quantidade']}", ln=True)
 
         pdf_buffer = BytesIO()
-        pdf.output(pdf_buffer)
-        pdf_buffer.seek(0)
+        pdf.output(pdf_buffer, 'S')  # 'S' indica que o PDF deve ser retornado como string
+
+        pdf_buffer.seek(0)  # Posiciona o ponteiro no início do buffer
         return pdf_buffer
 
 class EnviarRelatorioEmailView(LoginRequiredMixin, View):
@@ -95,14 +90,10 @@ class EnviarRelatorioEmailView(LoginRequiredMixin, View):
         email = EmailMessage(
             subject="Relatório de Veículos",
             body="Segue em anexo o relatório de veículos em formato PDF.",
-            from_email="seuemail@gmail.com",  # ou use 'EMAIL_HOST_USER' configurado no settings
-            to=["destinatario@example.com"],
+            to=["samuelssf027@gmail.com"],  # Altere para a lista de destinatários desejada
         )
         email.attach('relatorio_veiculos.pdf', pdf_content, 'application/pdf')
         email.send()
         pdf_buffer.close()  # Fecha o buffer após o uso
 
-        return HttpResponse("E-mail enviado com sucesso.") 
-
-
-
+        return HttpResponse("E-mail enviado com sucesso.")
