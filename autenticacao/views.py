@@ -90,7 +90,7 @@ class EnviarRelatorioEmailView(LoginRequiredMixin, View):
         email = EmailMessage(
             subject="Relatório de Veículos",
             body="Segue em anexo o relatório de veículos em formato PDF.",
-            to=["samuelssf027@gmail.com"],  # Altere para a lista de destinatários desejada
+            to=["gutobielsantos@sempreceub.com"],  # Altere para a lista de destinatários desejada
         )
         email.attach('relatorio_veiculos.pdf', pdf_content, 'application/pdf')
         email.send()
